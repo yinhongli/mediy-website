@@ -121,9 +121,26 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Server is running' });
 });
 
+// 生产环境：提供静态文件服务
+if (process.env.NODE_ENV === 'production') {
+  // 提供构建后的静态文件
+  app.use(express.static(path.join(__dirname, '../dist')));
+  
+  // SPA 路由：所有非 API 请求都返回 index.html
+  app.get('*', (req, res) => {
+    // 排除 API 路由
+    if (!req.path.startsWith('/api')) {
+      res.sendFile(path.join(__dirname, '../dist/index.html'));
+    }
+  });
+}
+
 // 启动服务器
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
+  if (process.env.NODE_ENV === 'production') {
+    console.log('Serving static files from dist directory');
+  }
 });
 
 // 优雅关闭
