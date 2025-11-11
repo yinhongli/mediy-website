@@ -55,7 +55,7 @@
   "author": "MEDIY",
   "license": "MIT",
   "overrides": {
-    "postcss-load-config": "5.0.3"
+    "postcss-load-config": "4.0.1"
   },
   "engines": {
     "node": ">=16.20.1 <17.0.0",
