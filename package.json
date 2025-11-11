@@ -23,7 +23,8 @@
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
     "docker:logs": "docker-compose logs -f",
-    "docker:rebuild": "docker-compose up -d --build"
+    "docker:rebuild": "docker-compose up -d --build",
+    "check:node": "node scripts/check-node-version.js"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -57,7 +58,7 @@
     "postcss-load-config": "5.0.3"
   },
   "engines": {
-    "node": ">=16.0.0",
+    "node": ">=16.20.1 <17.0.0",
     "npm": ">=8.0.0"
   }
 }

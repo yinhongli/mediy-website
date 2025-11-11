@@ -15,9 +15,10 @@
    ```
 
 3. **Node.js 版本兼容性**：
-   - 项目已配置支持 Node.js 16.20.1
+   - **项目要求 Node.js 16.20.1**（不支持其他版本）
    - Docker 镜像使用 Node.js 16.20.1 Alpine
    - 已通过 `overrides` 配置解决依赖兼容性问题
+   - 本地开发时请确保使用 Node.js 16.20.1（可使用 `nvm use` 切换）
 
 ## 方式一：使用 Docker Compose（推荐）
 
