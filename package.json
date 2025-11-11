@@ -17,7 +17,13 @@
     "pm2:delete": "pm2 delete mediy-website",
     "pm2:logs": "pm2 logs mediy-website",
     "pm2:status": "pm2 status",
-    "pm2:prod": "npm run build && pm2 start ecosystem.config.js --only mediy-website"
+    "pm2:prod": "npm run build && pm2 start ecosystem.config.js --only mediy-website",
+    "docker:build": "docker build -t mediy-website:latest .",
+    "docker:run": "docker run -d --name mediy-website -p 3002:3002 -v $(pwd)/data:/app/data mediy-website:latest",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "docker:rebuild": "docker-compose up -d --build"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -48,7 +54,7 @@
   "author": "MEDIY",
   "license": "MIT",
   "overrides": {
-    "postcss-load-config": "^5.0.4"
+    "postcss-load-config": "5.0.3"
   },
   "engines": {
     "node": ">=16.0.0",

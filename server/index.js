@@ -13,7 +13,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // 初始化SQLite数据库
-const db = new sqlite3.Database('./database.sqlite', (err) => {
+// 在 Docker 环境中使用 /app/data，否则使用当前目录
+const dbPath = process.env.DB_PATH || path.join(__dirname, '../data/database.sqlite');
+// 确保数据目录存在
+const dbDir = path.dirname(dbPath);
+const fs = require('fs');
+if (!fs.existsSync(dbDir)) {
+  fs.mkdirSync(dbDir, { recursive: true });
+}
+
+const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
     console.error('Error opening database:', err.message);
   } else {
