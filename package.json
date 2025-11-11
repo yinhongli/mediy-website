@@ -46,5 +46,12 @@
     "website"
   ],
   "author": "MEDIY",
-  "license": "MIT"
+  "license": "MIT",
+  "overrides": {
+    "postcss-load-config": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
 }

@@ -4,15 +4,25 @@
 
 ## 前置要求
 
-1. 安装 PM2（如果尚未安装）：
+1. **Node.js 版本要求**：
+   - 推荐：Node.js 16.20.1 或更高版本（16.x）
+   - 项目已配置兼容 Node.js 16
+
+2. 安装 PM2（如果尚未安装）：
 ```bash
 npm install -g pm2
 ```
 
-2. 安装项目依赖：
+3. 安装项目依赖：
 ```bash
 npm install
 ```
+
+   **注意**：如果遇到 `postcss-load-config` 版本警告，项目已通过 `overrides` 配置自动处理，可以安全忽略警告或重新安装依赖：
+   ```bash
+   rm -rf node_modules package-lock.json
+   npm install
+   ```
 
 ## 使用方式
 
