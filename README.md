@@ -91,6 +91,132 @@ docker-compose up -d
 npm run docker:up
 ```
 
+## 邮件配置
+
+当用户提交预约演示申请时，系统会自动发送邮件通知。
+
+### 推荐方式：使用 .env 文件配置（最简单）
+
+1. **复制示例文件**：
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **编辑 `.env` 文件**，填写你的邮箱配置：
+   ```bash
+   # 收件人邮箱（必填）
+   RECIPIENT_EMAIL=admin@mediy.com
+   
+   # SMTP 配置（必填）
+   SMTP_HOST=smtp.qq.com
+   SMTP_PORT=587
+   SMTP_USER=your-email@qq.com
+   SMTP_PASS=your-authorization-code
+   ```
+
+3. **完成！** 重启服务器即可生效。
+
+### 配置项说明
+
+#### 必需配置
+
+- **`RECIPIENT_EMAIL`**：收件人邮箱地址
+  - 支持多个邮箱，用逗号分隔：`email1@example.com,email2@example.com`
+  
+- **`SMTP_USER`**：SMTP 用户名（通常是你的邮箱地址）
+  
+- **`SMTP_PASS`**：SMTP 密码或授权码
+  - ⚠️ **重要**：QQ/163 邮箱需要使用授权码，不是登录密码
+
+#### 可选配置
+
+- **`SMTP_HOST`**：SMTP 服务器地址（默认：`smtp.qq.com`）
+- **`SMTP_PORT`**：SMTP 端口（默认：`587`）
+- **`SMTP_SECURE`**：是否使用 SSL/TLS（`true`/`false`，默认：`false`）
+- **`FROM_EMAIL`**：发件人邮箱（默认：使用 `SMTP_USER`）
+
+### 常见邮箱配置示例
+
+#### QQ 邮箱
+```bash
+RECIPIENT_EMAIL=admin@mediy.com
+SMTP_HOST=smtp.qq.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=your-qq@qq.com
+SMTP_PASS=abcdefghijklmnop  # QQ 邮箱授权码
+```
+
+#### 163 邮箱
+```bash
+RECIPIENT_EMAIL=admin@mediy.com
+SMTP_HOST=smtp.163.com
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER=your-163@163.com
+SMTP_PASS=your-163-authorization-code
+```
+
+#### Gmail
+```bash
+RECIPIENT_EMAIL=admin@mediy.com
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=your-gmail@gmail.com
+SMTP_PASS=your-app-password  # Gmail 应用专用密码
+```
+
+### 其他配置方式
+
+#### 方式二：环境变量（适合 Docker/PM2）
+
+**Docker Compose** (`docker-compose.yml`)：
+```yaml
+environment:
+  - RECIPIENT_EMAIL=admin@mediy.com
+  - SMTP_USER=your-email@qq.com
+  - SMTP_PASS=your-authorization-code
+```
+
+**PM2** (`ecosystem.config.js`)：
+```javascript
+env: {
+  RECIPIENT_EMAIL: 'admin@mediy.com',
+  SMTP_USER: 'your-email@qq.com',
+  SMTP_PASS: 'your-authorization-code'
+}
+```
+
+**命令行**：
+```bash
+export RECIPIENT_EMAIL="admin@mediy.com"
+export SMTP_USER="your-email@qq.com"
+export SMTP_PASS="your-authorization-code"
+```
+
+### 如何获取授权码？
+
+1. **QQ 邮箱**：
+   - 登录 QQ 邮箱 → 设置 → 账户
+   - 找到 "POP3/IMAP/SMTP/Exchange/CardDAV/CalDAV服务"
+   - 开启服务 → 生成授权码
+
+2. **163 邮箱**：
+   - 登录 163 邮箱 → 设置 → POP3/SMTP/IMAP
+   - 开启服务 → 生成授权码
+
+3. **Gmail**：
+   - 需要开启两步验证
+   - 生成应用专用密码
+
+### 注意事项
+
+- ✅ `.env` 文件已加入 `.gitignore`，不会被提交到代码库
+- ✅ 支持多个收件人：`RECIPIENT_EMAIL="email1@example.com,email2@example.com"`
+- ✅ 邮件发送失败不影响表单提交，数据仍会保存到数据库
+- ✅ 环境变量优先级高于 `.env` 文件（便于 Docker/PM2 覆盖配置）
+
 ## 项目结构
 
 ```

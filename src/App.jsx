@@ -491,23 +491,6 @@ const Contact = () => {
       const result = await response.json();
       
       if (result.success) {
-        // 发送短信通知
-        try {
-          await fetch('/api/sms', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              phone: '13621110621',
-              message: `新的预约演示申请：\n单位：${formData.companyName}\n联系人：${formData.contactName}\n联系方式：${formData.contactInfo}\n职位：${formData.position}\n需求：${formData.requirements}`
-            }),
-          });
-        } catch (smsError) {
-          console.error('短信发送失败:', smsError);
-          // 短信发送失败不影响主流程
-        }
-
         setSubmitStatus({ type: 'success', message: result.message });
         setFormData({
           companyName: '',
