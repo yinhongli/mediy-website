@@ -480,7 +480,7 @@ const Contact = () => {
     setSubmitStatus(null);
 
     try {
-      const response = await fetch('http://localhost:3002/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -493,7 +493,7 @@ const Contact = () => {
       if (result.success) {
         // 发送短信通知
         try {
-          await fetch('http://localhost:3002/api/sms', {
+          await fetch('/api/sms', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
