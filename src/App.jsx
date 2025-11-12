@@ -23,12 +23,16 @@ import {
 
 // MEDiY logo component
 const MediyLogo = ({ className = "h-8 w-8" }) => (
-  <img
-    src="/mediy-logo.png"
-    alt="MEDiY logo"
+  <svg
+    viewBox="0 0 120 80"
+    xmlns="http://www.w3.org/2000/svg"
     className={className}
-    style={{ objectFit: 'contain' }}
-  />
+    aria-label="MEDIY logo"
+  >
+    <path d="M30 60 L50 20 C55 10 70 10 75 20 L55 60 Z" fill="#2F7CF0" />
+    <path d="M65 60 L85 20 C90 10 105 10 110 20 L90 60 Z" fill="#2F7CF0" />
+    <polygon points="18,60 30,40 30,60" fill="#19C39C" />
+  </svg>
 );
 
 const Container = ({ children }) => (
@@ -70,13 +74,11 @@ const Header = () => (
   <header className="sticky top-0 z-40 w-full border-b border-slate-200/60 bg-white/70 backdrop-blur-md">
     <Container>
       <div className="flex h-16 items-center justify-between">
-        <div className="flex items-center">
-          <img
-            src="/800.png"
-            alt="MEDiY logo"
-            className="h-24 w-48"
-            style={{ objectFit: 'contain' }}
-          />
+        <div className="flex items-center gap-3">
+          <MediyLogo className="h-7 w-12" />
+          <span className="text-xl font-extrabold tracking-wide text-slate-900">
+            MEDIY
+          </span>
         </div>
         <nav className="hidden items-center gap-8 md:flex">
           <NavLink href="#features">产品优势</NavLink>
@@ -616,14 +618,23 @@ const Contact = () => {
 };
 
 const Footer = () => (
-  <footer className="border-t bg-white py-10">
+  <footer className="border-t bg-white py-8">
     <Container>
-      <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+      <div className="flex flex-col items-center gap-4 text-center">
         <div className="flex items-center gap-3 text-slate-600">
           <MediyLogo className="h-6 w-12" />
-          <span className="text-sm">© {new Date().getFullYear()} MEDIY. All rights reserved.</span>
+          <span className="text-sm">© {new Date().getFullYear()} MEDIY 版权所有</span>
         </div>
-        <div className="text-xs text-slate-500">隐私政策 · 服务条款</div>
+        <div className="text-xs text-slate-500">
+          <a 
+            href="https://beian.miit.gov.cn/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-slate-700 transition-colors"
+          >
+            京ICP备2025149901号-1
+          </a>
+        </div>
       </div>
     </Container>
   </footer>
