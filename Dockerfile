@@ -14,10 +14,10 @@ COPY package*.json ./
 # 安装依赖（使用 npm install 以支持 overrides）
 RUN npm install --legacy-peer-deps
 
-# 复制源代码
+# 复制源代码（包括 public 目录中的图片）
 COPY . .
 
-# 构建前端
+# 构建前端（Vite 会将 public 目录中的文件复制到 dist 根目录）
 RUN npm run build
 
 # 阶段2: 生产阶段
