@@ -1,38 +1,28 @@
 import React, { useState } from "react";
 import { MotionConfig, motion } from "framer-motion";
 import {
-  Activity,
   BrainCircuit,
   Stethoscope,
-  Gauge,
-  ShieldCheck,
   LineChart,
   Database,
   Link as LinkIcon,
-  Building2,
   Sparkles,
-  Cpu,
   ArrowRight,
   Bot,
   Zap,
   Eye,
   MessageSquare,
   FileText,
-  ClipboardList,
 } from "lucide-react";
 
 // MEDiY logo component
 const MediyLogo = ({ className = "h-8 w-8" }) => (
-  <svg
-    viewBox="0 0 120 80"
-    xmlns="http://www.w3.org/2000/svg"
+  <img
+    src="/mediy-logo.png"
+    alt="MEDiY logo"
     className={className}
-    aria-label="MEDIY logo"
-  >
-    <path d="M30 60 L50 20 C55 10 70 10 75 20 L55 60 Z" fill="#2F7CF0" />
-    <path d="M65 60 L85 20 C90 10 105 10 110 20 L90 60 Z" fill="#2F7CF0" />
-    <polygon points="18,60 30,40 30,60" fill="#19C39C" />
-  </svg>
+    style={{ objectFit: 'contain' }}
+  />
 );
 
 const Container = ({ children }) => (
@@ -74,11 +64,13 @@ const Header = () => (
   <header className="sticky top-0 z-40 w-full border-b border-slate-200/60 bg-white/70 backdrop-blur-md">
     <Container>
       <div className="flex h-16 items-center justify-between">
-        <div className="flex items-center gap-3">
-          <MediyLogo className="h-7 w-12" />
-          <span className="text-xl font-extrabold tracking-wide text-slate-900">
-            MEDIY
-          </span>
+        <div className="flex items-center">
+          <img
+            src="/mediy-logo2.png"
+            alt="MEDiY logo"
+            className="h-24 w-48"
+            style={{ objectFit: 'contain' }}
+          />
         </div>
         <nav className="hidden items-center gap-8 md:flex">
           <NavLink href="#features">产品优势</NavLink>
@@ -103,7 +95,7 @@ const Hero = () => (
     <div className="pointer-events-none absolute left-1/2 top-[-10%] -z-10 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-sky-200/30 via-blue-200/20 to-emerald-200/30 blur-3xl" />
     <div className="pointer-events-none absolute right-[-20%] top-[-5%] -z-10 h-[30rem] w-[30rem] rounded-full bg-gradient-to-l from-emerald-200/25 to-sky-200/15 blur-2xl" />
     <div className="pointer-events-none absolute left-[-15%] bottom-[-10%] -z-10 h-[25rem] w-[25rem] rounded-full bg-gradient-to-r from-blue-100/20 to-sky-100/10 blur-2xl" />
-    
+
     <Container>
       <div className="grid grid-cols-1 items-center gap-12 py-20 md:grid-cols-2 md:py-32">
         <motion.div
@@ -144,7 +136,7 @@ const Hero = () => (
           </div>
 
           {/* 主标题美化 */}
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -156,7 +148,7 @@ const Hero = () => (
           </motion.h1>
 
           {/* 描述文字美化 */}
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -166,7 +158,7 @@ const Hero = () => (
           </motion.p>
 
           {/* 按钮区域美化 */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -176,7 +168,7 @@ const Hero = () => (
               href="#contact"
               className="group inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-sky-600 to-blue-600 px-8 py-4 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-sky-500/25 hover:from-sky-700 hover:to-blue-700"
             >
-              立即咨询 
+              立即咨询
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
             <a
@@ -188,14 +180,14 @@ const Hero = () => (
           </motion.div>
 
           {/* 数据统计卡片美化 */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
             className="mt-12 grid grid-cols-3 gap-4 text-center md:max-w-lg"
           >
-            {[{k:"医院覆盖",v:"200+"},{k:"规则条目",v:"10k+"},{k:"系统可用性",v:"99.9%"}].map((i, index) => (
-              <motion.div 
+            {[{ k: "医院覆盖", v: "200+" }, { k: "规则条目", v: "10k+" }, { k: "系统可用性", v: "99.9%" }].map((i, index) => (
+              <motion.div
                 key={i.k}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -418,17 +410,17 @@ const Pricing = () => (
         {[
           {
             name: "私有化部署",
-            features: ["医院内网可用","适配国产化","多活容灾"],
+            features: ["医院内网可用", "适配国产化", "多活容灾"],
             cta: "获取方案",
           },
           {
             name: "混合云",
-            features: ["数据可控","弹性扩展","成本优化"],
+            features: ["数据可控", "弹性扩展", "成本优化"],
             cta: "咨询架构",
           },
           {
             name: "SaaS",
-            features: ["快速开通","按需计费","持续更新"],
+            features: ["快速开通", "按需计费", "持续更新"],
             cta: "立即试用",
           },
         ].map((p) => (
@@ -489,7 +481,7 @@ const Contact = () => {
       });
 
       const result = await response.json();
-      
+
       if (result.success) {
         setSubmitStatus({ type: 'success', message: result.message });
         setFormData({
@@ -522,62 +514,61 @@ const Contact = () => {
                 subtitle="留下您的信息，我们将在一个工作日内与您联系。"
               />
               <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <input 
+                <input
                   name="companyName"
                   value={formData.companyName}
                   onChange={handleInputChange}
-                  placeholder="单位名称" 
+                  placeholder="单位名称"
                   required
-                  className="rounded-xl border px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-sky-500" 
+                  className="rounded-xl border px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-sky-500"
                 />
-                <input 
+                <input
                   name="contactName"
                   value={formData.contactName}
                   onChange={handleInputChange}
-                  placeholder="联系人" 
+                  placeholder="联系人"
                   required
-                  className="rounded-xl border px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-sky-500" 
+                  className="rounded-xl border px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-sky-500"
                 />
-                <input 
+                <input
                   name="contactInfo"
                   value={formData.contactInfo}
                   onChange={handleInputChange}
-                  placeholder="联系方式" 
+                  placeholder="联系方式"
                   required
-                  className="rounded-xl border px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-sky-500" 
+                  className="rounded-xl border px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-sky-500"
                 />
-                <input 
+                <input
                   name="position"
                   value={formData.position}
                   onChange={handleInputChange}
-                  placeholder="职位/科室" 
-                  className="rounded-xl border px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-sky-500" 
+                  placeholder="职位/科室"
+                  className="rounded-xl border px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-sky-500"
                 />
-                <textarea 
+                <textarea
                   name="requirements"
                   value={formData.requirements}
                   onChange={handleInputChange}
-                  placeholder="需求简述" 
-                  rows={4} 
-                  className="sm:col-span-2 rounded-xl border px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-sky-500" 
+                  placeholder="需求简述"
+                  rows={4}
+                  className="sm:col-span-2 rounded-xl border px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-sky-500"
                 />
-                
+
                 {submitStatus && (
-                  <div className={`sm:col-span-2 p-4 rounded-xl ${
-                    submitStatus.type === 'success' 
-                      ? 'bg-green-50 text-green-700 border border-green-200' 
-                      : 'bg-red-50 text-red-700 border border-red-200'
-                  }`}>
+                  <div className={`sm:col-span-2 p-4 rounded-xl ${submitStatus.type === 'success'
+                    ? 'bg-green-50 text-green-700 border border-green-200'
+                    : 'bg-red-50 text-red-700 border border-red-200'
+                    }`}>
                     {submitStatus.message}
                   </div>
                 )}
-                
-                <button 
-                  type="submit" 
+
+                <button
+                  type="submit"
                   disabled={isSubmitting}
                   className="sm:col-span-2 inline-flex items-center justify-center gap-2 rounded-2xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? '提交中...' : '提交信息'} 
+                  {isSubmitting ? '提交中...' : '提交信息'}
                   {!isSubmitting && <ArrowRight className="h-4 w-4" />}
                 </button>
               </form>
@@ -586,11 +577,15 @@ const Contact = () => {
               <div className="mb-4 flex items-center gap-3">
                 <MediyLogo className="h-10 w-20" />
               </div>
-              <div className="space-y-2 text-sm text-slate-700">
-                <p>品牌口号：智启医疗，慧联健康</p>
-                <p>英文：Smart Healthy · Connected Care</p>
-                <p>支持：support@mediy.example</p>
-                <p>地址：北京市·海淀区（示例）</p>
+              <div className="space-y-1 text-sm text-slate-700">
+                <div>
+                  <span className="font-semibold">品牌口号：</span>
+                  智启医疗，慧联健康
+                </div>
+                <div>
+                  <span className="font-semibold">英文：</span>
+                  Smart Healthy · Connected Care
+                </div>
               </div>
             </div>
           </div>
@@ -609,9 +604,9 @@ const Footer = () => (
           <span className="text-sm">© {new Date().getFullYear()} MEDIY 版权所有</span>
         </div>
         <div className="text-xs text-slate-500">
-          <a 
-            href="https://beian.miit.gov.cn/" 
-            target="_blank" 
+          <a
+            href="https://beian.miit.gov.cn/"
+            target="_blank"
             rel="noopener noreferrer"
             className="hover:text-slate-700 transition-colors"
           >
