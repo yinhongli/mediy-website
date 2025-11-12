@@ -2,6 +2,9 @@
 # 阶段1: 构建阶段
 FROM node:16.20.1-alpine AS builder
 
+# 安装构建依赖（sqlite3 需要编译原生模块）
+RUN apk add --no-cache python3 make g++
+
 # 设置工作目录
 WORKDIR /app
 
@@ -20,6 +23,9 @@ RUN npm run build
 # 阶段2: 生产阶段
 FROM node:16.20.1-alpine AS production
 
+# 安装构建依赖（sqlite3 需要编译原生模块）
+RUN apk add --no-cache python3 make g++
+
 # 设置工作目录
 WORKDIR /app
 
@@ -28,6 +34,9 @@ COPY package*.json ./
 
 # 只安装生产依赖（使用 npm install 以支持 overrides）
 RUN npm install --omit=dev --legacy-peer-deps && npm cache clean --force
+
+# 清理构建依赖（可选，减小镜像大小）
+RUN apk del python3 make g++
 
 # 从构建阶段复制构建产物和服务器代码
 COPY --from=builder /app/dist ./dist
