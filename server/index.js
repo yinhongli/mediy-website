@@ -103,13 +103,13 @@ if (emailConfig.smtp.auth.user && emailConfig.smtp.auth.pass) {
 // 发送邮件函数
 async function sendEmail(subject, htmlContent, textContent) {
   if (!transporter) {
-    console.error('邮件服务器未配置，无法发送邮件');
-    return { success: false, error: '邮件服务器未配置' };
+    // 邮件服务器未配置是正常的，使用警告而不是错误
+    return { success: false, error: '邮件服务器未配置', skip: true };
   }
 
   if (!emailConfig.recipient) {
-    console.error('收件人邮箱未配置，请设置环境变量 RECIPIENT_EMAIL 或 TO_EMAIL');
-    return { success: false, error: '收件人邮箱未配置' };
+    // 收件人未配置也是正常的，使用警告而不是错误
+    return { success: false, error: '收件人邮箱未配置', skip: true };
   }
 
   try {
@@ -243,7 +243,11 @@ ${requirements ? `<p><strong>需求：</strong><br>${requirements.replace(/\n/g,
           console.log('✅ 邮件通知发送成功');
           console.log('   MessageId:', result.messageId);
           console.log('   响应:', result.response);
+        } else if (result.skip) {
+          // 邮件未配置是正常的，不输出错误日志
+          // 数据已保存到数据库，功能正常
         } else {
+          // 只有真正发送失败时才输出错误
           console.error('❌ 邮件通知发送失败');
           console.error('   错误:', result.error);
           if (result.code) {

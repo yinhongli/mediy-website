@@ -9,6 +9,9 @@ services:
     restart: unless-stopped
     ports:
       - "3002:3002"
+    # 加载 .env 文件中的环境变量
+    env_file:
+      - .env
     environment:
       - NODE_ENV=production
       - PORT=3002
