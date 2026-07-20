@@ -13,6 +13,15 @@ import {
   Eye,
   MessageSquare,
   FileText,
+  Building2,
+  Target,
+  Heart,
+  Users,
+  Award,
+  Phone,
+  Mic,
+  ShieldCheck,
+  Cpu,
 } from "lucide-react";
 
 // MEDiY logo component
@@ -60,23 +69,35 @@ const NavLink = ({ href, children }) => (
   </a>
 );
 
+const BrandLockup = () => (
+  <a href="#" className="group flex shrink-0 items-center gap-2.5">
+    <div className="hidden h-9 w-1 rounded-full bg-gradient-to-b from-sky-500 via-sky-600 to-emerald-500 sm:block" />
+    <div className="flex flex-col justify-center">
+      <span className="whitespace-nowrap text-base font-bold leading-none tracking-[0.12em] sm:text-lg sm:tracking-[0.18em]">
+        <span className="text-slate-800">金睿</span>
+        <span className="bg-gradient-to-r from-sky-600 to-emerald-600 bg-clip-text text-transparent">
+          医联
+        </span>
+      </span>
+      <span className="mt-1 hidden text-[10px] font-medium tracking-[0.28em] text-slate-400 sm:block">
+        JINRUI MEDICAL
+      </span>
+    </div>
+  </a>
+);
+
 const Header = () => (
   <header className="sticky top-0 z-40 w-full border-b border-slate-200/60 bg-white/70 backdrop-blur-md">
     <Container>
       <div className="flex h-16 items-center justify-between">
-        <div className="flex items-center">
-          <img
-            src="/mediy-logo2.png"
-            alt="MEDiY logo"
-            className="h-24 w-48"
-            style={{ objectFit: 'contain' }}
-          />
-        </div>
+        <BrandLockup />
         <nav className="hidden items-center gap-8 md:flex">
           <NavLink href="#features">产品优势</NavLink>
           <NavLink href="#solutions">解决方案</NavLink>
           <NavLink href="#modules">核心模块</NavLink>
+          <NavLink href="#agents">MEDIY智能体</NavLink>
           <NavLink href="#pricing">部署与支持</NavLink>
+          <NavLink href="#about">关于公司</NavLink>
         </nav>
         <a
           href="#contact"
@@ -237,6 +258,97 @@ const Hero = () => (
   </section>
 );
 
+const About = () => (
+  <section id="about" className="py-20">
+    <Container>
+      <SectionTitle
+        overline="ABOUT US"
+        title="关于公司"
+        subtitle="MEDIY 专注医疗智能化，以 AI 技术赋能医院质量管理与数字化转型。"
+      />
+      <div className="mt-12 grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+        <div className="grid grid-cols-2 gap-4 lg:order-1">
+          {[
+            { icon: Target, label: "企业愿景", value: "成为医疗智能化领域的领先服务商" },
+            { icon: Heart, label: "企业使命", value: "智启医疗，慧联健康" },
+            { icon: Users, label: "服务客户", value: "200+ 医疗机构" },
+            { icon: Award, label: "核心能力", value: "大模型质控 · 数据中台 · 互联互通" },
+          ].map((item) => (
+            <div
+              key={item.label}
+              className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md hover:border-sky-200"
+            >
+              <div className="rounded-xl bg-sky-50 p-2.5 text-sky-600 w-fit">
+                <item.icon className="h-5 w-5" />
+              </div>
+              <div className="mt-3 text-xs font-semibold tracking-wide text-sky-600">{item.label}</div>
+              <div className="mt-1 text-sm font-medium leading-6 text-slate-800">{item.value}</div>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-sky-50 via-white to-emerald-50 p-8 shadow-sm lg:order-2">
+          <div className="mb-6 flex items-center gap-3">
+            <div className="rounded-2xl bg-white p-3 shadow-sm">
+              <Building2 className="h-6 w-6 text-sky-600" />
+            </div>
+            <div>
+              <div className="text-lg font-bold text-slate-900">北京金睿医联科技有限公司</div>
+              <div className="text-sm text-slate-500">MEDIY · Smart Healthy · Connected Care</div>
+            </div>
+          </div>
+          <p className="text-sm leading-7 text-slate-600">
+            北京金睿医联科技有限公司（MEDIY）是一家聚焦智慧医疗领域的科技公司，致力于将大语言模型、知识图谱与医疗信息化深度融合，
+            为医院及区域医疗提供质控、病案、上报与制度监测等一体化解决方案。我们深入理解临床场景与监管要求，
+            以可落地的产品帮助医疗机构提升质量、降本增效，推动医疗服务的智能化与连续性。
+          </p>
+          <p className="mt-4 text-sm leading-7 text-slate-600">
+            团队具备丰富的医疗信息化与 AI 工程经验，产品已服务全国 200 余家医疗机构，
+            持续迭代质控规则与模型能力，助力客户实现数字化转型与数据资产沉淀。
+          </p>
+          <div className="mt-6 flex items-center gap-3 rounded-2xl border border-sky-100 bg-white/80 px-4 py-3">
+            <div className="rounded-xl bg-sky-50 p-2 text-sky-600">
+              <Phone className="h-4 w-4" />
+            </div>
+            <div>
+              <div className="text-xs font-semibold text-slate-500">联系电话</div>
+              <a
+                href="tel:4001686908"
+                className="text-base font-semibold text-sky-700 hover:text-sky-800"
+              >
+                400-168-6908
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+        {[
+          {
+            title: "专业深耕",
+            desc: "长期专注病历质控、病案管理与卫统上报等核心场景，产品贴合医院实际业务流程。",
+          },
+          {
+            title: "技术领先",
+            desc: "融合 LLM、向量检索与知识图谱，持续投入 AI 质控引擎与智能决策能力研发。",
+          },
+          {
+            title: "可靠交付",
+            desc: "支持私有化、混合云与 SaaS 多种部署模式，提供从实施到运维的全生命周期服务。",
+          },
+        ].map((item) => (
+          <div
+            key={item.title}
+            className="rounded-3xl border border-slate-200/60 bg-slate-50 p-6"
+          >
+            <div className="text-base font-semibold text-slate-900">{item.title}</div>
+            <p className="mt-2 text-sm leading-6 text-slate-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+);
+
 const Features = () => (
   <section id="features" className="py-20">
     <Container>
@@ -339,6 +451,132 @@ const Modules = () => (
   </section>
 );
 
+const MediyAgent = () => (
+  <section id="agents" className="py-20">
+    <Container>
+      <SectionTitle
+        overline="MEDIY AI AGENT"
+        title="MEDIY智能体"
+        subtitle="多模型协同的医疗 AI 智能体平台，统一接入语音、医疗、质控等专业大模型，赋能临床、管理与运营全场景。"
+      />
+      <div className="mt-12 rounded-3xl border border-sky-100 bg-gradient-to-br from-sky-50 via-white to-emerald-50 p-8 shadow-sm">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-10">
+          <div className="flex shrink-0 items-center gap-4">
+            <div className="rounded-2xl bg-gradient-to-br from-sky-600 to-emerald-600 p-4 text-white shadow-lg">
+              <Cpu className="h-8 w-8" />
+            </div>
+            <div>
+              <div className="text-xl font-bold text-slate-900">智能体平台介绍</div>
+              <div className="mt-1 text-sm text-slate-500">Agent Orchestration · Multi-Model</div>
+            </div>
+          </div>
+          <div className="space-y-4 text-sm leading-7 text-slate-600 lg:flex-1">
+            <p>
+              MEDIY智能体是金睿医联面向医院打造的医疗 AI 中枢，以智能体架构串联各类垂直大模型与业务系统。
+              支持自然语言、语音等多模态交互，可理解临床语境、调用专业知识库，并自动完成质控审查、病案检索、上报校验等任务。
+            </p>
+            <p>
+              平台采用「基础大模型 + 领域微调 + 工具调用」的技术路线，模型可私有化部署，数据不出院；
+              通过统一的 Agent 编排引擎，实现多模型按需组合、任务分解与结果汇总，让 AI 能力真正融入日常医疗工作流。
+            </p>
+          </div>
+        </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          {["多模态交互", "工具链调用", "知识库增强", "私有化部署", "任务自动编排"].map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full border border-sky-200 bg-white/80 px-4 py-1.5 text-xs font-medium text-sky-700"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className="mt-12">
+        <h3 className="text-center text-lg font-semibold text-slate-900">专业大模型矩阵</h3>
+        <p className="mt-2 text-center text-sm text-slate-600">
+          覆盖感知、认知与质控全链路，可按场景灵活组合调用
+        </p>
+        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              icon: Mic,
+              title: "语音大模型",
+              tag: "Speech LLM",
+              desc: "支持医患对话语音识别、语音指令交互与会议记录转写，适配门诊、查房、远程会诊等场景，实现「说即录、说即查」。",
+              points: ["高精度医疗术语识别", "实时语音转写与摘要", "语音驱动的智能体指令"],
+            },
+            {
+              icon: Stethoscope,
+              title: "医疗大模型",
+              tag: "Medical LLM",
+              desc: "基于海量医学文献、指南与临床语料训练，提供诊断辅助、用药建议、病历解读与循证问答，助力临床决策智能化。",
+              points: ["循证医学知识问答", "病历智能解读与摘要", "个性化诊疗建议生成"],
+            },
+            {
+              icon: ShieldCheck,
+              title: "质控大模型",
+              tag: "QC LLM",
+              desc: "专注病历书写规范、诊疗逻辑一致性与核心制度合规审查，结合规则引擎与知识图谱，实现实时质控与闭环整改。",
+              points: ["书写规范智能审查", "诊疗逻辑一致性检测", "质控问题根因分析"],
+            },
+            {
+              icon: FileText,
+              title: "病案大模型",
+              tag: "Record LLM",
+              desc: "面向电子病案的全文理解、结构化抽取与智能检索，支持无纸化病案管理、编码辅助与多维度统计分析。",
+              points: ["病案全文语义检索", "OCR 与结构化提取", "编码与归档智能辅助"],
+            },
+            {
+              icon: LineChart,
+              title: "上报大模型",
+              tag: "Report LLM",
+              desc: "智能完成病案首页、卫统报表等数据填报与校验，自动识别异常字段、回溯数据来源，提升上报准确率与效率。",
+              points: ["报表智能填报", "跨系统数据校验", "错误自动定位与修正建议"],
+            },
+            {
+              icon: BrainCircuit,
+              title: "决策大模型",
+              tag: "Decision LLM",
+              desc: "融合患者多维数据与质量指标，提供风险预警、资源调度与质量改进建议，支撑医院精细化管理与持续改进。",
+              points: ["高风险患者预警", "质量趋势智能分析", "管理决策辅助建议"],
+            },
+          ].map((model) => (
+            <div
+              key={model.title}
+              className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-lg hover:shadow-sky-100/50"
+            >
+              <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-gradient-to-br from-sky-100/60 to-emerald-100/40 blur-2xl transition group-hover:scale-110" />
+              <div className="relative">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="rounded-2xl bg-gradient-to-br from-sky-50 to-emerald-50 p-3 text-sky-600">
+                    <model.icon className="h-6 w-6" />
+                  </div>
+                  <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-slate-500">
+                    {model.tag}
+                  </span>
+                </div>
+                <h4 className="mt-4 text-base font-bold text-slate-900 group-hover:text-sky-700">
+                  {model.title}
+                </h4>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{model.desc}</p>
+                <ul className="mt-4 space-y-2 border-t border-slate-100 pt-4">
+                  {model.points.map((point) => (
+                    <li key={point} className="flex items-start gap-2 text-xs text-slate-600">
+                      <span className="mt-1.5 inline-block h-1 w-1 shrink-0 rounded-full bg-emerald-500" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Container>
+  </section>
+);
+
 const Solutions = () => (
   <section id="solutions" className="py-20">
     <Container>
@@ -347,6 +585,19 @@ const Solutions = () => (
         title="行业解决方案"
         subtitle="基于大模型技术，为医院提供智能化、个性化的医疗质控与决策支持解决方案。"
       />
+      <div className="mx-auto mt-12 max-w-3xl overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-xl">
+        <video
+          className="aspect-video w-full bg-black object-contain"
+          controls
+          muted
+          playsInline
+          preload="metadata"
+          poster="/800.png"
+        >
+          <source src="/videos/mediy-qc-demo.mp4" type="video/mp4" />
+          您的浏览器不支持视频播放。
+        </video>
+      </div>
       <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
         {[
           {
@@ -627,8 +878,10 @@ export default function MediyWebsite() {
           <Hero />
           <Features />
           <Modules />
+          <MediyAgent />
           <Solutions />
           <Pricing />
+          <About />
           <Contact />
         </main>
         <Footer />
