@@ -9,7 +9,7 @@ const path = require('path');
 const nodemailer = require('nodemailer');
 
 const app = express();
-const PORT = 3002;
+const PORT = process.env.PORT || 3002;
 
 // 中间件
 app.use(cors());
