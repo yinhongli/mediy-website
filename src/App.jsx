@@ -5,7 +5,6 @@ import {
   Stethoscope,
   LineChart,
   Database,
-  Link as LinkIcon,
   Sparkles,
   ArrowRight,
   Bot,
@@ -39,7 +38,7 @@ const Container = ({ children }) => (
 );
 
 const Pill = ({ children }) => (
-  <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur-md">
+  <span className="inline-flex items-center gap-2 rounded-full border border-sky-200/70 bg-white/75 px-3.5 py-1.5 text-xs font-semibold text-sky-800 shadow-sm backdrop-blur-md">
     {children}
   </span>
 );
@@ -47,16 +46,19 @@ const Pill = ({ children }) => (
 const SectionTitle = ({ overline, title, subtitle }) => (
   <div className="mx-auto max-w-3xl text-center">
     {overline && (
-      <div className="mb-3 text-sm font-semibold tracking-widest text-sky-600">
+      <div className="mb-4 inline-flex rounded-full border border-sky-200/70 bg-sky-50/80 px-4 py-1.5 text-xs font-semibold tracking-[0.18em] text-sky-700 backdrop-blur-sm">
         {overline}
       </div>
     )}
-    <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-      {title}
+    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+      <span className="bg-gradient-to-r from-slate-900 via-sky-800 to-slate-900 bg-clip-text text-transparent">
+        {title}
+      </span>
     </h2>
     {subtitle && (
-      <p className="mt-3 text-base leading-7 text-slate-600">{subtitle}</p>
+      <p className="mt-4 text-base leading-7 text-slate-600">{subtitle}</p>
     )}
+    <div className="mx-auto mt-5 h-1 w-14 rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-cyan-400" />
   </div>
 );
 
@@ -113,7 +115,7 @@ const Header = () => (
 const Hero = () => (
   <section className="relative overflow-hidden">
     <Container>
-      <div className="grid grid-cols-1 items-center gap-12 py-20 md:grid-cols-2 md:py-32">
+      <div className="grid grid-cols-1 items-center gap-12 py-16 md:grid-cols-2 md:py-24 lg:py-28">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -146,7 +148,7 @@ const Hero = () => (
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <Pill>
-                <LinkIcon className="h-4 w-4" /> 互联互通
+                <ShieldCheck className="h-4 w-4" /> 医保智能审核
               </Pill>
             </motion.div>
           </div>
@@ -182,14 +184,14 @@ const Hero = () => (
           >
             <a
               href="#contact"
-              className="group inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-sky-600 to-blue-600 px-8 py-4 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-sky-500/25 hover:from-sky-700 hover:to-blue-700"
+              className="group inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-sky-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-sky-500/30"
             >
               立即咨询
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#features"
-              className="group inline-flex items-center gap-3 rounded-2xl border-2 border-slate-200 bg-white/80 px-8 py-4 text-base font-semibold text-slate-700 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-sky-200 hover:bg-sky-50/50"
+              className="group inline-flex items-center gap-3 rounded-2xl border border-sky-200/80 bg-white/80 px-8 py-4 text-base font-semibold text-slate-700 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50/80 hover:text-sky-800"
             >
               了解产品
             </a>
@@ -200,7 +202,7 @@ const Hero = () => (
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-12 grid grid-cols-3 gap-4 text-center md:max-w-lg"
+            className="mt-12 grid grid-cols-3 gap-3 text-center md:max-w-lg"
           >
             {[{ k: "医院覆盖", v: "200+" }, { k: "规则条目", v: "10k+" }, { k: "系统可用性", v: "99.9%" }].map((i, index) => (
               <motion.div
@@ -208,10 +210,11 @@ const Hero = () => (
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                className="group rounded-3xl border border-slate-200/60 bg-white/90 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-sky-100/50 hover:border-sky-200"
+                className="group relative overflow-hidden rounded-2xl border border-white/70 bg-white/75 p-4 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-sky-200 hover:shadow-lg hover:shadow-sky-100/40"
               >
-                <div className="text-3xl font-black text-slate-900 group-hover:text-sky-600 transition-colors duration-300">{i.v}</div>
-                <div className="mt-2 text-sm font-medium text-slate-500 group-hover:text-slate-600 transition-colors duration-300">{i.k}</div>
+                <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-sky-400 to-cyan-400 opacity-70" />
+                <div className="text-2xl font-black text-sky-700 transition-colors duration-300 group-hover:text-sky-600 sm:text-3xl">{i.v}</div>
+                <div className="mt-1.5 text-xs font-medium text-slate-500">{i.k}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -223,26 +226,27 @@ const Hero = () => (
           transition={{ duration: 0.7, delay: 0.1 }}
           className="relative"
         >
-          <div className="absolute -left-10 -top-10 h-20 w-20 rounded-2xl bg-emerald-200/60 blur-2xl" />
-          <div className="absolute -right-6 -bottom-6 h-24 w-24 rounded-full bg-sky-200/60 blur-2xl" />
-          <div className="rounded-3xl border border-slate-200/80 bg-white p-6 shadow-xl">
-            <div className="mb-4 flex items-center gap-3">
-              <MediyLogo className="h-12 w-24" />
-              <div>
-                <div className="text-xs text-slate-500">Smart Healthy · Connected Care</div>
-              </div>
+          <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-sky-200/30 via-transparent to-cyan-200/20 blur-2xl" />
+          <div className="relative rounded-[1.75rem] border border-white/70 bg-white/75 p-6 shadow-xl backdrop-blur-md ring-1 ring-sky-100/60">
+            <div className="mb-5 flex items-center justify-between gap-3 border-b border-sky-100/80 pb-4">
+              <MediyLogo className="h-10 w-20" />
+              <span className="rounded-full bg-sky-50 px-3 py-1 text-[10px] font-semibold tracking-wide text-sky-700">
+                AI MEDICAL PLATFORM
+              </span>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3">
               {[
                 { icon: Bot, title: "大模型质控", desc: "LLM + 知识图谱，智能识别病历书写与诊疗逻辑问题。" },
                 { icon: Eye, title: "AI 决策支持", desc: "基于循证医学的智能诊断建议与临床决策支持。" },
                 { icon: Database, title: "数据中台", desc: "统一标准与主索引，沉淀病案、检验、检查等结构化数据。" },
-                { icon: LinkIcon, title: "互联互通", desc: "对接HIS/EMR/LIS/PACS/医保/卫统，HL7/FHIR全覆盖。" },
+                { icon: ShieldCheck, title: "医保智能审核", desc: "对接医保结算与 HIS 数据，智能识别违规收费与超范围项目，支持事前提醒与事后稽核。" },
               ].map((f) => (
-                <div key={f.title} className="rounded-2xl border p-4">
-                  <f.icon className="h-5 w-5" />
-                  <div className="mt-2 text-sm font-semibold text-slate-900">{f.title}</div>
-                  <div className="mt-1 text-xs text-slate-600">{f.desc}</div>
+                <div key={f.title} className="group rounded-2xl border border-sky-100/80 bg-gradient-to-br from-white to-sky-50/30 p-4 transition-all duration-300 hover:border-sky-200 hover:shadow-md">
+                  <div className="inline-flex rounded-xl bg-sky-50 p-2 text-sky-600 transition-colors group-hover:bg-sky-100">
+                    <f.icon className="h-4 w-4" />
+                  </div>
+                  <div className="mt-2.5 text-sm font-semibold text-slate-900">{f.title}</div>
+                  <div className="mt-1 text-xs leading-5 text-slate-600">{f.desc}</div>
                 </div>
               ))}
             </div>
@@ -267,7 +271,7 @@ const About = () => (
             { icon: Target, label: "企业愿景", value: "成为医疗智能化领域的领先服务商" },
             { icon: Heart, label: "企业使命", value: "智启医疗，慧联健康" },
             { icon: Users, label: "服务客户", value: "200+ 医疗机构" },
-            { icon: Award, label: "核心能力", value: "大模型质控 · 数据中台 · 互联互通" },
+            { icon: Award, label: "核心能力", value: "大模型质控 · 数据中台 · 医保智能审核" },
           ].map((item) => (
             <div
               key={item.label}
@@ -371,10 +375,10 @@ const Features = () => {
       highlight: "标准互通",
     },
     {
-      icon: LinkIcon,
-      title: "互联互通生态",
-      desc: "兼容 HL7/FHIR/DICOM 与地区卫统上报，开放 API 与三方系统协同。",
-      highlight: "全链路对接",
+      icon: ShieldCheck,
+      title: "医保智能审核",
+      desc: "融合医保政策规则引擎与大模型能力，智能识别重复收费、超范围用药、分解住院等违规行为，覆盖事前提醒、事中拦截与事后稽核全流程。",
+      highlight: "合规防控",
     },
     {
       icon: Zap,
@@ -385,44 +389,47 @@ const Features = () => {
   ];
 
   return (
-  <section id="features" className="py-20">
+  <section id="features" className="py-24">
     <Container>
       <SectionTitle
         overline="PRODUCT ADVANTAGES"
         title="产品优势"
         subtitle="以大模型为核、以数据为轴、以连接为骨，AI 驱动医疗质量与效率双提升。"
       />
-      <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-14 rounded-[2rem] border border-white/60 bg-white/35 p-5 shadow-sm backdrop-blur-md sm:p-8 lg:p-10">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {features.map((f, index) => (
           <div
             key={f.title}
-            className="group relative overflow-hidden rounded-3xl border border-white/60 bg-white/80 p-6 shadow-sm backdrop-blur-md transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-sky-300 hover:bg-gradient-to-br hover:from-sky-400 hover:via-sky-500 hover:to-cyan-400 hover:shadow-xl hover:shadow-sky-400/25 hover:ring-2 hover:ring-sky-200/60"
+            className="group relative overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-6 shadow-sm backdrop-blur-md transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-sky-200 hover:bg-gradient-to-br hover:from-sky-50 hover:via-sky-100 hover:to-cyan-50 hover:shadow-xl hover:shadow-sky-200/50 hover:ring-2 hover:ring-sky-100/80"
           >
-            <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-sky-200/40 blur-2xl transition-all duration-500 group-hover:scale-125 group-hover:bg-white/25" />
+            <div className="absolute inset-x-0 top-0 h-1 scale-x-0 bg-gradient-to-r from-sky-400 to-cyan-400 transition-transform duration-500 group-hover:scale-x-100" />
+            <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-sky-200/30 blur-2xl transition-all duration-500 group-hover:scale-125 group-hover:bg-sky-200/60" />
             <div className="relative flex h-full flex-col">
               <div className="mb-5 flex items-start justify-between gap-3">
-                <div className="inline-flex rounded-2xl bg-gradient-to-br from-sky-50 to-cyan-50 p-3.5 text-sky-600 shadow-sm ring-1 ring-sky-100/80 transition-all duration-500 group-hover:bg-white/25 group-hover:text-white group-hover:ring-white/30">
+                <div className="inline-flex rounded-2xl bg-gradient-to-br from-sky-50 to-cyan-50 p-3.5 text-sky-600 shadow-sm ring-1 ring-sky-100/80 transition-all duration-500 group-hover:bg-sky-200/60 group-hover:text-sky-700 group-hover:ring-sky-200">
                   <f.icon className="h-6 w-6" />
                 </div>
-                <span className="text-xs font-semibold tracking-widest text-slate-300 transition-colors duration-500 group-hover:text-white/70">
+                <span className="rounded-full bg-slate-100/80 px-2.5 py-0.5 text-xs font-semibold tracking-widest text-slate-400 transition-colors duration-500 group-hover:bg-sky-200/50 group-hover:text-sky-600">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
-              <h3 className="text-lg font-bold text-slate-900 transition-colors duration-500 group-hover:text-white">
+              <h3 className="text-lg font-bold text-slate-900 transition-colors duration-500 group-hover:text-sky-800">
                 {f.title}
               </h3>
-              <p className="mt-3 flex-1 text-sm leading-7 text-slate-600 transition-colors duration-500 group-hover:text-white/95">
+              <p className="mt-3 flex-1 text-sm leading-7 text-slate-600 transition-colors duration-500 group-hover:text-slate-700">
                 {f.desc}
               </p>
-              <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4 transition-colors duration-500 group-hover:border-white/25">
-                <span className="inline-flex rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700 transition-all duration-500 group-hover:bg-white/20 group-hover:text-white">
+              <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4 transition-colors duration-500 group-hover:border-sky-200/80">
+                <span className="inline-flex rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700 transition-all duration-500 group-hover:bg-sky-200/70 group-hover:text-sky-800">
                   {f.highlight}
                 </span>
-                <ArrowRight className="h-4 w-4 text-slate-300 transition-all duration-500 group-hover:translate-x-1 group-hover:text-white" />
+                <ArrowRight className="h-4 w-4 text-slate-300 transition-all duration-500 group-hover:translate-x-1 group-hover:text-sky-500" />
               </div>
             </div>
           </div>
         ))}
+        </div>
       </div>
     </Container>
   </section>
