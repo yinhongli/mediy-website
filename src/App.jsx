@@ -856,18 +856,43 @@ const Contact = () => {
                 </button>
               </form>
             </div>
-            <div className="rounded-2xl border bg-slate-50 p-6">
-              <div className="mb-4 flex items-center gap-3">
+            <div className="rounded-2xl border border-slate-200/70 bg-gradient-to-br from-slate-50 to-sky-50/40 p-6">
+              <div className="mb-5 flex items-center gap-3">
                 <MediyLogo className="h-10 w-20" />
               </div>
-              <div className="space-y-1 text-sm text-slate-700">
+              <div className="space-y-2 text-sm text-slate-700">
                 <div>
-                  <span className="font-semibold">品牌口号：</span>
-                  智启医疗，慧联健康
+                  <span className="font-semibold text-slate-900">品牌口号</span>
+                  <p className="mt-1 text-slate-600">智启医疗，慧联健康</p>
                 </div>
                 <div>
-                  <span className="font-semibold">英文：</span>
-                  Smart Healthy · Connected Care
+                  <span className="font-semibold text-slate-900">英文</span>
+                  <p className="mt-1 text-slate-500">Smart Healthy · Connected Care</p>
+                </div>
+              </div>
+              <div className="mt-6 border-t border-slate-200/80 pt-6">
+                <div className="flex flex-col gap-5">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="inline-flex shrink-0 items-center gap-2 rounded-full bg-sky-100/80 px-3 py-1 text-xs font-semibold text-sky-700">
+                      <Phone className="h-3.5 w-3.5" />
+                      联系电话
+                    </div>
+                    <a
+                      href="tel:4001686908"
+                      className="whitespace-nowrap text-lg font-bold tracking-wide text-sky-700 transition hover:text-sky-800 sm:text-xl"
+                    >
+                      400-168-6908
+                    </a>
+                  </div>
+                  <div className="flex justify-center sm:justify-start">
+                    <div className="rounded-2xl border border-white bg-white p-2 shadow-sm ring-1 ring-slate-100">
+                      <img
+                        src="/contact-qrcode.png"
+                        alt="MEDIY 联系二维码"
+                        className="h-28 w-28 object-contain"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
