@@ -87,7 +87,7 @@ const BrandLockup = () => (
 );
 
 const Header = () => (
-  <header className="sticky top-0 z-40 w-full border-b border-slate-200/60 bg-white/70 backdrop-blur-md">
+  <header className="sticky top-0 z-40 w-full border-b border-white/20 bg-white/75 backdrop-blur-md">
     <Container>
       <div className="flex h-16 items-center justify-between">
         <BrandLockup />
@@ -111,12 +111,7 @@ const Header = () => (
 );
 
 const Hero = () => (
-  <section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-emerald-50">
-    {/* 背景装饰元素 */}
-    <div className="pointer-events-none absolute left-1/2 top-[-10%] -z-10 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-sky-200/30 via-blue-200/20 to-emerald-200/30 blur-3xl" />
-    <div className="pointer-events-none absolute right-[-20%] top-[-5%] -z-10 h-[30rem] w-[30rem] rounded-full bg-gradient-to-l from-emerald-200/25 to-sky-200/15 blur-2xl" />
-    <div className="pointer-events-none absolute left-[-15%] bottom-[-10%] -z-10 h-[25rem] w-[25rem] rounded-full bg-gradient-to-r from-blue-100/20 to-sky-100/10 blur-2xl" />
-
+  <section className="relative overflow-hidden">
     <Container>
       <div className="grid grid-cols-1 items-center gap-12 py-20 md:grid-cols-2 md:py-32">
         <motion.div
@@ -349,107 +344,144 @@ const About = () => (
   </section>
 );
 
-const Features = () => (
+const Features = () => {
+  const features = [
+    {
+      icon: Bot,
+      title: "大模型质控引擎",
+      desc: "基于 LLM 的智能病历质控，自动识别书写规范、诊疗逻辑与一致性错误。",
+      highlight: "准确率 95%+",
+    },
+    {
+      icon: BrainCircuit,
+      title: "AI 临床决策支持",
+      desc: "融合知识图谱与大语言模型，提供个性化诊断建议、用药安全审查与风险预警。",
+      highlight: "循证驱动",
+    },
+    {
+      icon: MessageSquare,
+      title: "智能问答助手",
+      desc: "基于医疗知识库的智能问答系统，支持病历查询、用药咨询与诊疗指南检索。",
+      highlight: "7×24 响应",
+    },
+    {
+      icon: Database,
+      title: "统一数据底座",
+      desc: "主索引 + 标准映射 + 元数据管理，沉淀高质量结构化医疗数据资产。",
+      highlight: "标准互通",
+    },
+    {
+      icon: LinkIcon,
+      title: "互联互通生态",
+      desc: "兼容 HL7/FHIR/DICOM 与地区卫统上报，开放 API 与三方系统协同。",
+      highlight: "全链路对接",
+    },
+    {
+      icon: Zap,
+      title: "实时 AI 推理",
+      desc: "毫秒级 AI 推理响应，支持实时质控、预警与决策支持，满足临床时效要求。",
+      highlight: "毫秒级响应",
+    },
+  ];
+
+  return (
   <section id="features" className="py-20">
     <Container>
       <SectionTitle
         overline="PRODUCT ADVANTAGES"
         title="产品优势"
-        subtitle="以大模型为核、以数据为轴、以连接为骨，AI驱动医疗质量与效率双提升。"
+        subtitle="以大模型为核、以数据为轴、以连接为骨，AI 驱动医疗质量与效率双提升。"
       />
-      <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {[
-          {
-            icon: Bot,
-            title: "大模型质控引擎",
-            desc: "基于LLM的智能病历质控，自动识别书写规范、诊疗逻辑与一致性错误，准确率95%+。",
-          },
-          {
-            icon: BrainCircuit,
-            title: "AI 临床决策支持",
-            desc: "融合知识图谱与大语言模型，提供个性化诊断建议、用药安全审查与风险预警。",
-          },
-          {
-            icon: MessageSquare,
-            title: "智能问答助手",
-            desc: "基于医疗知识库的智能问答系统，支持病历查询、用药咨询与诊疗指南检索。",
-          },
-          {
-            icon: Database,
-            title: "统一数据底座",
-            desc: "主索引+标准映射+元数据管理，沉淀高质量结构化医疗数据资产。",
-          },
-          {
-            icon: LinkIcon,
-            title: "互联互通生态",
-            desc: "兼容 HL7/FHIR/DICOM 与地区卫统上报，开放 API 与三方系统协同。",
-          },
-          {
-            icon: Zap,
-            title: "实时AI推理",
-            desc: "毫秒级AI推理响应，支持实时质控、预警与决策支持，满足临床时效要求。",
-          },
-        ].map((f) => (
+      <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+        {features.map((f, index) => (
           <div
             key={f.title}
-            className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+            className="group relative overflow-hidden rounded-3xl border border-white/60 bg-white/80 p-6 shadow-sm backdrop-blur-md transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-sky-300 hover:bg-gradient-to-br hover:from-sky-400 hover:via-sky-500 hover:to-cyan-400 hover:shadow-xl hover:shadow-sky-400/25 hover:ring-2 hover:ring-sky-200/60"
           >
-            <div className="flex items-center gap-3">
-              <div className="rounded-xl bg-sky-50 p-3 text-sky-600">
-                <f.icon className="h-5 w-5" />
+            <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-sky-200/40 blur-2xl transition-all duration-500 group-hover:scale-125 group-hover:bg-white/25" />
+            <div className="relative flex h-full flex-col">
+              <div className="mb-5 flex items-start justify-between gap-3">
+                <div className="inline-flex rounded-2xl bg-gradient-to-br from-sky-50 to-cyan-50 p-3.5 text-sky-600 shadow-sm ring-1 ring-sky-100/80 transition-all duration-500 group-hover:bg-white/25 group-hover:text-white group-hover:ring-white/30">
+                  <f.icon className="h-6 w-6" />
+                </div>
+                <span className="text-xs font-semibold tracking-widest text-slate-300 transition-colors duration-500 group-hover:text-white/70">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
               </div>
-              <h3 className="text-base font-semibold text-slate-900">{f.title}</h3>
+              <h3 className="text-lg font-bold text-slate-900 transition-colors duration-500 group-hover:text-white">
+                {f.title}
+              </h3>
+              <p className="mt-3 flex-1 text-sm leading-7 text-slate-600 transition-colors duration-500 group-hover:text-white/95">
+                {f.desc}
+              </p>
+              <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4 transition-colors duration-500 group-hover:border-white/25">
+                <span className="inline-flex rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700 transition-all duration-500 group-hover:bg-white/20 group-hover:text-white">
+                  {f.highlight}
+                </span>
+                <ArrowRight className="h-4 w-4 text-slate-300 transition-all duration-500 group-hover:translate-x-1 group-hover:text-white" />
+              </div>
             </div>
-            <p className="mt-3 text-sm leading-6 text-slate-600">{f.desc}</p>
           </div>
         ))}
       </div>
     </Container>
   </section>
-);
+  );
+};
 
-const Modules = () => (
-  <section id="modules" className="bg-slate-50 py-20">
+const Modules = () => {
+  const modules = [
+    {
+      icon: Bot,
+      title: "大模型质控",
+      desc: "• 基于大语言模型与医疗知识图谱\n• 智能审查书写规范、诊疗逻辑\n• 质控准确率达98%以上\n• 实时质控与预警机制\n• 显著提升医疗质量与安全水平",
+    },
+    {
+      icon: FileText,
+      title: "无纸化智慧病案管理",
+      desc: "• 全流程电子病案管理体系\n• 集成OCR识别与结构化提取技术\n• 多维度检索与深度分析功能\n• 管理效率提升300%以上\n• 助力医院数字化转型与数据资产化",
+    },
+    {
+      icon: Stethoscope,
+      title: "智能上报",
+      desc: "• 无缝对接HIS/EMR/LIS/PACS系统\n• 智能完成病案首页、卫统报表上报\n• 内置数据校验、错误回溯机制\n• 上报准确率99.5%以上\n• 大幅降低人工成本与风险",
+    },
+    {
+      icon: LineChart,
+      title: "35项核心制度监测平台",
+      desc: "• 基于国家卫健委35项核心制度\n• 全流程智能监测体系\n• 实时预警、趋势分析、根因挖掘\n• 持续改进闭环管理机制\n• 27项病案质控全覆盖，提升质量",
+    },
+  ];
+
+  return (
+  <section id="modules" className="py-20">
     <Container>
       <SectionTitle overline="CORE MODULES" title="核心模块" />
       <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {[
-          {
-            icon: Bot,
-            title: "大模型质控",
-            desc: "• 基于大语言模型与医疗知识图谱\n• 智能审查书写规范、诊疗逻辑\n• 质控准确率达98%以上\n• 实时质控与预警机制\n• 显著提升医疗质量与安全水平",
-          },
-          {
-            icon: FileText,
-            title: "无纸化智慧病案管理",
-            desc: "• 全流程电子病案管理体系\n• 集成OCR识别与结构化提取技术\n• 多维度检索与深度分析功能\n• 管理效率提升300%以上\n• 助力医院数字化转型与数据资产化",
-          },
-          {
-            icon: Stethoscope,
-            title: "智能上报",
-            desc: "• 无缝对接HIS/EMR/LIS/PACS系统\n• 智能完成病案首页、卫统报表上报\n• 内置数据校验、错误回溯机制\n• 上报准确率99.5%以上\n• 大幅降低人工成本与风险",
-          },
-          {
-            icon: LineChart,
-            title: "35项核心制度监测平台",
-            desc: "• 基于国家卫健委35项核心制度\n• 全流程智能监测体系\n• 实时预警、趋势分析、根因挖掘\n• 持续改进闭环管理机制\n• 27项病案质控全覆盖，提升质量",
-          },
-        ].map((m) => (
-          <div key={m.title} className="group relative overflow-hidden rounded-3xl border border-slate-200/60 bg-white/80 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-sky-100/50 hover:border-sky-200">
-            <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-gradient-to-br from-sky-100/50 to-emerald-100/50 blur-xl group-hover:scale-110 transition-transform duration-300" />
+        {modules.map((m) => (
+          <div
+            key={m.title}
+            className="group relative overflow-hidden rounded-3xl border border-slate-200/60 bg-white/85 p-6 shadow-sm backdrop-blur-sm transition-all duration-500 ease-out hover:-translate-y-1 hover:border-sky-300 hover:bg-gradient-to-br hover:from-sky-400 hover:via-sky-500 hover:to-cyan-400 hover:shadow-xl hover:shadow-sky-400/25 hover:ring-2 hover:ring-sky-200/70"
+          >
+            <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-gradient-to-br from-sky-100/50 to-emerald-100/50 blur-xl transition-all duration-500 group-hover:scale-125 group-hover:bg-white/20" />
             <div className="relative">
-              <div className="mb-4 inline-flex rounded-2xl bg-gradient-to-br from-sky-50 to-emerald-50 p-3 text-sky-600 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+              <div className="mb-4 inline-flex rounded-2xl bg-gradient-to-br from-sky-50 to-emerald-50 p-3 text-sky-600 shadow-sm transition-all duration-500 group-hover:bg-white/20 group-hover:text-white group-hover:shadow-white/10">
                 <m.icon className="h-6 w-6" />
               </div>
-              <div className="mb-3 text-lg font-bold text-slate-900 group-hover:text-sky-700 transition-colors duration-300">{m.title}</div>
-              <div className="text-sm leading-relaxed text-slate-600 whitespace-pre-line group-hover:text-slate-700 transition-colors duration-300">{m.desc}</div>
+              <div className="mb-3 text-lg font-bold text-slate-900 transition-colors duration-500 group-hover:text-white">
+                {m.title}
+              </div>
+              <div className="text-sm leading-relaxed whitespace-pre-line text-slate-600 transition-colors duration-500 group-hover:text-white/95">
+                {m.desc}
+              </div>
             </div>
           </div>
         ))}
       </div>
     </Container>
   </section>
-);
+  );
+};
 
 const MediyAgent = () => (
   <section id="agents" className="py-20">
@@ -654,7 +686,7 @@ const Solutions = () => (
 );
 
 const Pricing = () => (
-  <section id="pricing" className="bg-slate-50 py-20">
+  <section id="pricing" className="py-20">
     <Container>
       <SectionTitle overline="DEPLOYMENT" title="部署与支持" />
       <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -847,7 +879,7 @@ const Contact = () => {
 };
 
 const Footer = () => (
-  <footer className="border-t bg-white py-8">
+  <footer className="border-t border-white/20 bg-white/75 py-8 backdrop-blur-md">
     <Container>
       <div className="flex flex-col items-center gap-4 text-center">
         <div className="flex items-center gap-3 text-slate-600">
@@ -872,7 +904,15 @@ const Footer = () => (
 export default function MediyWebsite() {
   return (
     <MotionConfig reducedMotion="user">
-      <div className="min-h-screen bg-white text-slate-900">
+      <div className="relative min-h-screen text-slate-900">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-0 -z-20 bg-[url('/site-bg.png')] bg-cover bg-right bg-no-repeat"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-r from-white/90 via-white/72 to-white/20"
+        />
         <Header />
         <main>
           <Hero />
