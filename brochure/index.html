@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEDIY 金睿医联 · 产品宣传彩页（高清版）</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+      color: #1e293b;
+      background: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    /* ===== Page 1: Cover ===== */
+    .cover {
+      background: linear-gradient(145deg, #f0f9ff 0%, #ffffff 45%, #ecfdf5 100%);
+    }
+
+    .cover-top-bar {
+      height: 8mm;
+      background: linear-gradient(90deg, #0284c7, #0ea5e9, #10b981);
+    }
+
+    .cover-body {
+      padding: 14mm 16mm 12mm;
+      height: calc(297mm - 8mm);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cover-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10mm;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 4mm;
+    }
+
+    .brand-bar {
+      width: 1.5mm;
+      height: 12mm;
+      border-radius: 2mm;
+      background: linear-gradient(180deg, #0284c7, #10b981);
+    }
+
+    .brand-name {
+      font-size: 22pt;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .brand-name .jinrui { color: #1e293b; }
+    .brand-name .yilian {
+      background: linear-gradient(90deg, #0284c7, #059669);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .brand-en {
+      font-size: 8pt;
+      color: #94a3b8;
+      letter-spacing: 0.28em;
+      margin-top: 1mm;
+    }
+
+    .cover-logo img {
+      height: 14mm;
+      object-fit: contain;
+    }
+
+    .cover-tags {
+      display: flex;
+      gap: 3mm;
+      flex-wrap: wrap;
+      margin-bottom: 8mm;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.5mm;
+      padding: 1.5mm 4mm;
+      border-radius: 999px;
+      border: 0.3mm solid #bae6fd;
+      background: rgba(255,255,255,0.85);
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #0369a1;
+    }
+
+    .cover-title {
+      font-size: 32pt;
+      font-weight: 900;
+      line-height: 1.25;
+      background: linear-gradient(90deg, #1e293b, #0369a1, #1e293b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 5mm;
+    }
+
+    .cover-subtitle {
+      font-size: 12pt;
+      line-height: 1.75;
+      color: #475569;
+      max-width: 130mm;
+      margin-bottom: 8mm;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      margin-bottom: 8mm;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 4mm;
+      border-radius: 4mm;
+      border: 0.3mm solid #e2e8f0;
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 1mm 3mm rgba(14,165,233,0.08);
+    }
+
+    .stat-value {
+      font-size: 22pt;
+      font-weight: 900;
+      color: #0369a1;
+    }
+
+    .stat-label {
+      font-size: 8.5pt;
+      color: #64748b;
+      margin-top: 1mm;
+    }
+
+    .cover-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+      margin-bottom: 5mm;
+    }
+
+    .highlight-card {
+      padding: 4mm;
+      border-radius: 4mm;
+      border: 0.3mm solid #e0f2fe;
+      background: linear-gradient(135deg, #ffffff, #f0f9ff);
+    }
+
+    .highlight-card h3 {
+      font-size: 10.5pt;
+      color: #0f172a;
+      margin-bottom: 2mm;
+      display: flex;
+      align-items: center;
+      gap: 2mm;
+    }
+
+    .highlight-icon {
+      width: 7mm;
+      height: 7mm;
+      border-radius: 2mm;
+      background: #e0f2fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10pt;
+    }
+
+    .highlight-card p {
+      font-size: 8.5pt;
+      line-height: 1.6;
+      color: #64748b;
+    }
+
+    .cover-footer {
+      margin-top: auto;
+      padding-top: 5mm;
+      border-top: 0.3mm solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cover-footer-left {
+      font-size: 8.5pt;
+      color: #64748b;
+    }
+
+    .cover-footer-left strong {
+      display: block;
+      font-size: 10pt;
+      color: #0369a1;
+      margin-top: 1mm;
+    }
+
+    /* ===== Shared inner page styles ===== */
+    .inner {
+      padding: 10mm 14mm 8mm;
+      height: 297mm;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .page-main {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 4mm;
+      border-bottom: 0.5mm solid #e2e8f0;
+      margin-bottom: 6mm;
+    }
+
+    .page-header .mini-brand {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #0369a1;
+      letter-spacing: 0.1em;
+    }
+
+    .page-header .section-label {
+      font-size: 8pt;
+      color: #94a3b8;
+      letter-spacing: 0.2em;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 4mm;
+    }
+
+    .section-overline {
+      display: inline-block;
+      font-size: 7.5pt;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: #0369a1;
+      background: #f0f9ff;
+      border: 0.3mm solid #bae6fd;
+      border-radius: 999px;
+      padding: 1mm 4mm;
+      margin-bottom: 3mm;
+    }
+
+    .section-title h2 {
+      font-size: 18pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .section-title p {
+      font-size: 9pt;
+      color: #64748b;
+      margin-top: 2mm;
+      line-height: 1.6;
+    }
+
+    .title-bar {
+      width: 12mm;
+      height: 1mm;
+      background: linear-gradient(90deg, #38bdf8, #06b6d4);
+      border-radius: 1mm;
+      margin: 3mm auto 0;
+    }
+
+    /* ===== Page 2: Modules ===== */
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4mm;
+      margin-bottom: 6mm;
+    }
+
+    .module-card {
+      padding: 4.5mm;
+      border-radius: 4mm;
+      border: 0.3mm solid #e2e8f0;
+      background: #fff;
+    }
+
+    .module-card h3 {
+      font-size: 11pt;
+      color: #0369a1;
+      margin-bottom: 2.5mm;
+      padding-bottom: 2mm;
+      border-bottom: 0.3mm solid #e0f2fe;
+    }
+
+    .module-card ul {
+      list-style: none;
+      font-size: 8.5pt;
+      line-height: 1.65;
+      color: #475569;
+    }
+
+    .module-card li {
+      padding-left: 4mm;
+      position: relative;
+      margin-bottom: 1mm;
+    }
+
+    .module-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #0ea5e9;
+      font-weight: bold;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+    }
+
+    .feature-item {
+      padding: 3.5mm;
+      border-radius: 3mm;
+      background: linear-gradient(135deg, #f8fafc, #f0f9ff);
+      border: 0.3mm solid #e2e8f0;
+    }
+
+    .feature-item h4 {
+      font-size: 9pt;
+      color: #0f172a;
+      margin-bottom: 1.5mm;
+    }
+
+    .feature-item p {
+      font-size: 7.5pt;
+      color: #64748b;
+      line-height: 1.55;
+    }
+
+    .feature-badge {
+      display: inline-block;
+      margin-top: 2mm;
+      font-size: 7pt;
+      font-weight: 600;
+      color: #0369a1;
+      background: #e0f2fe;
+      padding: 0.5mm 2.5mm;
+      border-radius: 999px;
+    }
+
+    /* ===== Page 3: AI Agent ===== */
+    .agent-banner {
+      padding: 5mm;
+      border-radius: 4mm;
+      background: linear-gradient(135deg, #f0f9ff, #ffffff, #ecfdf5);
+      border: 0.3mm solid #bae6fd;
+      margin-bottom: 5mm;
+    }
+
+    .agent-banner h3 {
+      font-size: 12pt;
+      color: #0f172a;
+      margin-bottom: 2mm;
+    }
+
+    .agent-banner p {
+      font-size: 8.5pt;
+      line-height: 1.7;
+      color: #475569;
+    }
+
+    .agent-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2mm;
+      margin-top: 3mm;
+    }
+
+    .agent-tag {
+      font-size: 7.5pt;
+      padding: 1mm 3mm;
+      border-radius: 999px;
+      border: 0.3mm solid #bae6fd;
+      background: rgba(255,255,255,0.8);
+      color: #0369a1;
+    }
+
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+      margin-bottom: 5mm;
+    }
+
+    .model-card {
+      padding: 3.5mm;
+      border-radius: 3mm;
+      border: 0.3mm solid #e2e8f0;
+      background: #fff;
+    }
+
+    .model-card .model-tag {
+      font-size: 6.5pt;
+      color: #94a3b8;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .model-card h4 {
+      font-size: 9pt;
+      color: #0369a1;
+      margin: 1.5mm 0;
+    }
+
+    .model-card p {
+      font-size: 7.5pt;
+      color: #64748b;
+      line-height: 1.55;
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3mm;
+    }
+
+    .solution-card {
+      padding: 3.5mm;
+      border-radius: 3mm;
+      border: 0.3mm solid #e2e8f0;
+    }
+
+    .solution-card h4 {
+      font-size: 9pt;
+      color: #0f172a;
+      margin-bottom: 2mm;
+    }
+
+    .solution-card ul {
+      list-style: none;
+      font-size: 7.5pt;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .solution-card li {
+      padding-left: 3.5mm;
+      position: relative;
+      margin-bottom: 0.8mm;
+    }
+
+    .solution-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 2mm;
+      width: 1.5mm;
+      height: 1.5mm;
+      border-radius: 50%;
+      background: #0ea5e9;
+    }
+
+    /* ===== Page 4: About & Contact ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 5mm;
+      margin-bottom: 5mm;
+    }
+
+    .about-text {
+      padding: 5mm;
+      border-radius: 4mm;
+      background: linear-gradient(135deg, #f0f9ff, #ffffff, #ecfdf5);
+      border: 0.3mm solid #e2e8f0;
+    }
+
+    .about-text h3 {
+      font-size: 12pt;
+      color: #0f172a;
+      margin-bottom: 3mm;
+    }
+
+    .about-text p {
+      font-size: 8.5pt;
+      line-height: 1.75;
+      color: #475569;
+      margin-bottom: 2.5mm;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3mm;
+    }
+
+    .value-card {
+      padding: 3.5mm;
+      border-radius: 3mm;
+      border: 0.3mm solid #e2e8f0;
+      background: #fff;
+    }
+
+    .value-card .label {
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: #0369a1;
+      margin-bottom: 1mm;
+    }
+
+    .value-card .value {
+      font-size: 8.5pt;
+      color: #1e293b;
+      line-height: 1.5;
+    }
+
+    .deploy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+      margin-bottom: 5mm;
+    }
+
+    .deploy-card {
+      text-align: center;
+      padding: 4mm 3mm;
+      border-radius: 3mm;
+      border: 0.3mm solid #e2e8f0;
+      background: #f8fafc;
+    }
+
+    .deploy-card h4 {
+      font-size: 10pt;
+      color: #0369a1;
+      margin-bottom: 2mm;
+    }
+
+    .deploy-card ul {
+      list-style: none;
+      font-size: 7.5pt;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .contact-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5mm 6mm;
+      border-radius: 4mm;
+      background: linear-gradient(135deg, #0284c7, #0ea5e9);
+      color: #fff;
+    }
+
+    .contact-info h3 {
+      font-size: 14pt;
+      margin-bottom: 2mm;
+    }
+
+    .contact-info .slogan {
+      font-size: 9pt;
+      opacity: 0.9;
+      margin-bottom: 4mm;
+    }
+
+    .contact-phone {
+      font-size: 20pt;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-phone-label {
+      font-size: 8pt;
+      opacity: 0.85;
+      margin-bottom: 1mm;
+    }
+
+    .contact-website {
+      font-size: 9pt;
+      margin-top: 3mm;
+      opacity: 0.9;
+    }
+
+    .contact-qr {
+      text-align: center;
+    }
+
+    .contact-qr img {
+      width: 28mm;
+      height: 28mm;
+      background: #fff;
+      padding: 2mm;
+      border-radius: 3mm;
+    }
+
+    .contact-qr span {
+      display: block;
+      font-size: 7.5pt;
+      margin-top: 2mm;
+      opacity: 0.9;
+    }
+
+    .page-footer {
+      flex: 0 0 auto;
+      margin-top: 3mm;
+      padding-top: 3mm;
+      border-top: 0.3mm solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7pt;
+      color: #94a3b8;
+    }
+
+    /* ===== Graphic capability pages (no screenshots) ===== */
+    .flow-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2mm;
+      margin-bottom: 5mm;
+      padding: 4mm 5mm;
+      background: linear-gradient(90deg, #f0f9ff, #ecfdf5);
+      border-radius: 4mm;
+      border: 0.3mm solid #bae6fd;
+    }
+
+    .flow-step {
+      flex: 1;
+      text-align: center;
+      font-size: 8pt;
+      font-weight: 600;
+      color: #0369a1;
+    }
+
+    .flow-step span {
+      display: block;
+      font-size: 14pt;
+      margin-bottom: 1mm;
+    }
+
+    .flow-arrow {
+      color: #94a3b8;
+      font-size: 12pt;
+      flex-shrink: 0;
+    }
+
+    .cap-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.5mm;
+      margin-bottom: 4mm;
+    }
+
+    .cap-card {
+      padding: 4mm;
+      border-radius: 3.5mm;
+      border: 0.3mm solid #e2e8f0;
+      background: #fff;
+    }
+
+    .cap-card .cap-icon {
+      width: 10mm;
+      height: 10mm;
+      border-radius: 2.5mm;
+      background: linear-gradient(135deg, #e0f2fe, #d1fae5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14pt;
+      margin-bottom: 2.5mm;
+    }
+
+    .cap-card h3 {
+      font-size: 10pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 2mm;
+    }
+
+    .cap-card p {
+      font-size: 7.5pt;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .cap-card .cap-tag {
+      display: inline-block;
+      margin-top: 2mm;
+      font-size: 7pt;
+      font-weight: 600;
+      color: #0369a1;
+      background: #e0f2fe;
+      padding: 0.5mm 2mm;
+      border-radius: 999px;
+    }
+
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3mm;
+      margin-bottom: 5mm;
+    }
+
+    .kpi-box {
+      text-align: center;
+      padding: 4mm 2mm;
+      border-radius: 3mm;
+      color: #fff;
+    }
+
+    .kpi-box .kpi-val {
+      font-size: 18pt;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .kpi-box .kpi-lbl {
+      font-size: 7pt;
+      opacity: 0.92;
+      margin-top: 1.5mm;
+      line-height: 1.35;
+    }
+
+    .kpi-box.c1 { background: linear-gradient(135deg, #38bdf8, #0284c7); }
+    .kpi-box.c2 { background: linear-gradient(135deg, #2dd4bf, #059669); }
+    .kpi-box.c3 { background: linear-gradient(135deg, #a78bfa, #7c3aed); }
+    .kpi-box.c4 { background: linear-gradient(135deg, #fb923c, #ea580c); }
+
+    .chart-panel {
+      padding: 4mm 5mm;
+      border-radius: 3.5mm;
+      border: 0.3mm solid #e2e8f0;
+      background: #f8fafc;
+      margin-bottom: 4mm;
+    }
+
+    .chart-panel h4 {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 3mm;
+    }
+
+    .bar-chart {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      height: 22mm;
+      gap: 2mm;
+      padding-top: 2mm;
+    }
+
+    .bar-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+    }
+
+    .bar-pair {
+      display: flex;
+      align-items: flex-end;
+      gap: 1mm;
+      height: 22mm;
+    }
+
+    .bar {
+      width: 5mm;
+      border-radius: 1mm 1mm 0 0;
+    }
+
+    .bar.blue { background: #38bdf8; }
+    .bar.pink { background: #fda4af; }
+    .bar-label {
+      font-size: 6pt;
+      color: #64748b;
+      margin-top: 1.5mm;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .chart-legend {
+      display: flex;
+      gap: 4mm;
+      margin-top: 3mm;
+      font-size: 7pt;
+      color: #64748b;
+    }
+
+    .chart-legend i {
+      display: inline-block;
+      width: 3mm;
+      height: 2mm;
+      border-radius: 0.5mm;
+      margin-right: 1mm;
+      vertical-align: middle;
+    }
+
+    .highlight-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+    }
+
+    .highlight-box {
+      padding: 3.5mm;
+      border-radius: 3mm;
+      border-left: 1.2mm solid #0284c7;
+      background: #f8fafc;
+      border-top: 0.3mm solid #e2e8f0;
+      border-right: 0.3mm solid #e2e8f0;
+      border-bottom: 0.3mm solid #e2e8f0;
+    }
+
+    .highlight-box h4 {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 1.5mm;
+    }
+
+    .highlight-box p {
+      font-size: 7.5pt;
+      color: #64748b;
+      line-height: 1.55;
+    }
+
+    .integrate-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3mm;
+      margin-top: 5mm;
+    }
+
+    .integrate-item {
+      text-align: center;
+      padding: 3.5mm 2mm;
+      border-radius: 3mm;
+      border: 0.3mm solid #e2e8f0;
+      background: linear-gradient(180deg, #fff, #f8fafc);
+    }
+
+    .integrate-item .int-icon {
+      font-size: 16pt;
+      margin-bottom: 1.5mm;
+    }
+
+    .integrate-item h4 {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 1mm;
+    }
+
+    .integrate-item p {
+      font-size: 7pt;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    .service-flow {
+      display: flex;
+      align-items: stretch;
+      gap: 2mm;
+      margin-top: 4mm;
+      padding: 4mm;
+      border-radius: 3.5mm;
+      background: linear-gradient(135deg, #f0f9ff, #ecfdf5);
+      border: 0.3mm solid #bae6fd;
+    }
+
+    .service-step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      padding: 2mm 1mm;
+    }
+
+    .service-step:not(:last-child)::after {
+      content: "›";
+      position: absolute;
+      right: -2mm;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      font-size: 14pt;
+      font-weight: 300;
+    }
+
+    .service-step .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 6mm;
+      height: 6mm;
+      border-radius: 50%;
+      background: #0284c7;
+      color: #fff;
+      font-size: 7pt;
+      font-weight: 700;
+      margin-bottom: 1.5mm;
+    }
+
+    .service-step h4 {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 1mm;
+    }
+
+    .service-step p {
+      font-size: 6.5pt;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3mm;
+      margin-top: 4mm;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 2.5mm;
+      padding: 3mm;
+      border-radius: 3mm;
+      background: #fff;
+      border: 0.3mm solid #e2e8f0;
+    }
+
+    .trust-item .trust-val {
+      font-size: 13pt;
+      font-weight: 900;
+      color: #0284c7;
+      line-height: 1;
+    }
+
+    .trust-item .trust-lbl {
+      font-size: 7pt;
+      color: #64748b;
+      line-height: 1.35;
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3mm;
+      margin-top: 4mm;
+    }
+
+    .audience-item {
+      text-align: center;
+      padding: 3mm 2mm;
+      border-radius: 3mm;
+      background: linear-gradient(135deg, #f0f9ff, #fff);
+      border: 0.3mm solid #bae6fd;
+    }
+
+    .audience-item span {
+      display: block;
+      font-size: 14pt;
+      margin-bottom: 1mm;
+    }
+
+    .audience-item h4 {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 1mm;
+    }
+
+    .audience-item p {
+      font-size: 7pt;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    .tech-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2mm;
+      margin-top: 4mm;
+      padding: 3.5mm 4mm;
+      border-radius: 3mm;
+      background: #f8fafc;
+      border: 0.3mm solid #e2e8f0;
+      justify-content: center;
+    }
+
+    .tech-chip {
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: #0369a1;
+      background: #e0f2fe;
+      border: 0.3mm solid #bae6fd;
+      border-radius: 999px;
+      padding: 1mm 3mm;
+    }
+
+    .arch-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5mm;
+      margin-top: 4mm;
+    }
+
+    .arch-item {
+      text-align: center;
+      padding: 3mm 2mm;
+      border-radius: 3mm;
+      background: linear-gradient(180deg, #0284c7, #0369a1);
+      color: #fff;
+    }
+
+    .arch-item h4 {
+      font-size: 8pt;
+      font-weight: 700;
+      margin-bottom: 1mm;
+    }
+
+    .arch-item p {
+      font-size: 6.5pt;
+      opacity: 0.9;
+      line-height: 1.4;
+    }
+
+    .arch-item .arch-plus {
+      display: block;
+      font-size: 10pt;
+      margin-top: 1.5mm;
+      opacity: 0.7;
+    }
+
+    .product-line {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5mm;
+      margin-bottom: 5mm;
+    }
+
+    .product-line-item {
+      text-align: center;
+      padding: 2.5mm;
+      border-radius: 2.5mm;
+      background: rgba(255,255,255,0.9);
+      border: 0.3mm solid #bae6fd;
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: #0369a1;
+    }
+
+    .promise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+      margin-top: 4mm;
+    }
+
+    .promise-card {
+      padding: 4mm;
+      border-radius: 3mm;
+      border: 0.3mm solid #e2e8f0;
+      background: #fff;
+    }
+
+    .promise-card h4 {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #0284c7;
+      margin-bottom: 2mm;
+    }
+
+    .promise-card ul {
+      list-style: none;
+      font-size: 7.5pt;
+      color: #64748b;
+      line-height: 1.65;
+    }
+
+    .promise-card li {
+      padding-left: 3.5mm;
+      position: relative;
+      margin-bottom: 0.8mm;
+    }
+
+    .promise-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: 700;
+      font-size: 7pt;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page 1: Cover -->
+  <div class="page cover">
+    <div class="cover-top-bar"></div>
+    <div class="cover-body">
+      <div class="cover-header">
+        <div class="brand">
+          <div class="brand-bar"></div>
+          <div>
+            <div class="brand-name">
+              <span class="jinrui">金睿</span><span class="yilian">医联</span>
+            </div>
+            <div class="brand-en">JINRUI MEDICAL · MEDIY</div>
+          </div>
+        </div>
+        <div class="cover-logo">
+          <img src="assets/800.png" alt="MEDIY Logo" />
+        </div>
+      </div>
+
+      <div class="cover-tags">
+        <span class="tag">🤖 大模型 · AI 驱动</span>
+        <span class="tag">✨ 智慧医疗</span>
+        <span class="tag">🛡️ 医保智能审核</span>
+      </div>
+
+      <h1 class="cover-title">智启医疗<br/>慧联健康</h1>
+
+      <p class="cover-subtitle">
+        基于大语言模型与知识图谱的医疗智能化平台，融合 NLP、向量检索与深度学习技术，
+        实现大模型质控、无纸化智慧病案管理、智能上报与 35 项核心制度监测，
+        打造以 AI 驱动的连续性医疗质量提升体系。
+      </p>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-value">200+</div>
+          <div class="stat-label">医院覆盖</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">10k+</div>
+          <div class="stat-label">规则条目</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">99.9%</div>
+          <div class="stat-label">系统可用性</div>
+        </div>
+      </div>
+
+      <div class="cover-highlights">
+        <div class="highlight-card">
+          <h3><span class="highlight-icon">🤖</span>大模型质控</h3>
+          <p>LLM + 知识图谱，智能识别病历书写与诊疗逻辑问题，质控准确率达 98% 以上。</p>
+        </div>
+        <div class="highlight-card">
+          <h3><span class="highlight-icon">🩺</span>AI 决策支持</h3>
+          <p>基于循证医学的智能诊断建议与临床决策支持，助力临床工作智能化。</p>
+        </div>
+        <div class="highlight-card">
+          <h3><span class="highlight-icon">📊</span>数据中台</h3>
+          <p>统一标准与主索引，沉淀病案、检验、检查等结构化数据，实现标准互通。</p>
+        </div>
+        <div class="highlight-card">
+          <h3><span class="highlight-icon">🛡️</span>医保智能审核</h3>
+          <p>对接医保结算与 HIS 数据，智能识别违规收费，支持事前提醒与事后稽核。</p>
+        </div>
+        <div class="highlight-card">
+          <h3><span class="highlight-icon">📄</span>智慧病案</h3>
+          <p>OCR 识别与结构化提取，无纸化病案管理，管理效率提升 300% 以上。</p>
+        </div>
+        <div class="highlight-card">
+          <h3><span class="highlight-icon">📤</span>智能上报</h3>
+          <p>病案首页与卫统报表智能填报，上报准确率 99.5% 以上，降低人工风险。</p>
+        </div>
+      </div>
+
+      <div class="product-line">
+        <div class="product-line-item">大模型质控引擎</div>
+        <div class="product-line-item">无纸化智慧病案</div>
+        <div class="product-line-item">35 项制度监测</div>
+        <div class="product-line-item">MEDIY AI 智能体</div>
+      </div>
+
+      <div class="cover-footer">
+        <div class="cover-footer-left">
+          北京金睿医联科技有限公司
+          <strong>Smart Healthy · Connected Care</strong>
+        </div>
+        <div class="cover-footer-left" style="text-align: right;">
+          全国统一服务热线
+          <strong>400-168-6908</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 2: Core Modules & Features -->
+  <div class="page">
+    <div class="inner">
+      <div class="page-header">
+        <span class="mini-brand">MEDIY 金睿医联</span>
+        <span class="section-label">CORE MODULES</span>
+      </div>
+
+      <div class="page-main">
+
+      <div class="section-title">
+        <div class="section-overline">核心模块</div>
+        <h2>四大核心产品模块</h2>
+        <p>深入理解临床场景与监管要求，以可落地的产品帮助医疗机构提升质量、降本增效</p>
+        <div class="title-bar"></div>
+      </div>
+
+      <div class="modules-grid">
+        <div class="module-card">
+          <h3>大模型质控</h3>
+          <ul>
+            <li>基于大语言模型与医疗知识图谱</li>
+            <li>智能审查书写规范、诊疗逻辑</li>
+            <li>质控准确率达 98% 以上</li>
+            <li>实时质控与预警机制</li>
+          </ul>
+        </div>
+        <div class="module-card">
+          <h3>无纸化智慧病案管理</h3>
+          <ul>
+            <li>全流程电子病案管理体系</li>
+            <li>集成 OCR 识别与结构化提取</li>
+            <li>管理效率提升 300% 以上</li>
+            <li>助力医院数字化转型</li>
+          </ul>
+        </div>
+        <div class="module-card">
+          <h3>智能上报</h3>
+          <ul>
+            <li>无缝对接 HIS / EMR / LIS / PACS</li>
+            <li>智能完成病案首页、卫统报表上报</li>
+            <li>上报准确率 99.5% 以上</li>
+            <li>大幅降低人工成本与风险</li>
+          </ul>
+        </div>
+        <div class="module-card">
+          <h3>35 项核心制度监测平台</h3>
+          <ul>
+            <li>基于国家卫健委 35 项核心制度</li>
+            <li>实时预警、趋势分析、根因挖掘</li>
+            <li>持续改进闭环管理机制</li>
+            <li>27 项病案质控全覆盖</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-bottom: 3mm;">
+        <div class="section-overline">PRODUCT ADVANTAGES</div>
+        <h2>产品优势</h2>
+        <div class="title-bar"></div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <h4>大模型质控引擎</h4>
+          <p>自动识别书写规范、诊疗逻辑与一致性错误</p>
+          <span class="feature-badge">准确率 95%+</span>
+        </div>
+        <div class="feature-item">
+          <h4>AI 临床决策支持</h4>
+          <p>个性化诊断建议、用药安全审查与风险预警</p>
+          <span class="feature-badge">循证驱动</span>
+        </div>
+        <div class="feature-item">
+          <h4>智能问答助手</h4>
+          <p>病历查询、用药咨询与诊疗指南检索</p>
+          <span class="feature-badge">7×24 响应</span>
+        </div>
+        <div class="feature-item">
+          <h4>统一数据底座</h4>
+          <p>主索引 + 标准映射 + 元数据管理</p>
+          <span class="feature-badge">标准互通</span>
+        </div>
+        <div class="feature-item">
+          <h4>医保智能审核</h4>
+          <p>覆盖事前提醒、事中拦截与事后稽核全流程</p>
+          <span class="feature-badge">合规防控</span>
+        </div>
+        <div class="feature-item">
+          <h4>实时 AI 推理</h4>
+          <p>毫秒级响应，满足临床时效要求</p>
+          <span class="feature-badge">毫秒级响应</span>
+        </div>
+      </div>
+
+      <div class="tech-strip" style="margin-top: 4mm;">
+        <span class="tech-chip">大语言模型 LLM</span>
+        <span class="tech-chip">医疗知识图谱</span>
+        <span class="tech-chip">向量检索 RAG</span>
+        <span class="tech-chip">OCR 结构化</span>
+        <span class="tech-chip">规则引擎</span>
+        <span class="tech-chip">实时 AI 推理</span>
+      </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>北京金睿医联科技有限公司 · MEDIY</span>
+        <span>www.mediy.com.cn</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 3: Clinical QC (graphic, no screenshots) -->
+  <div class="page">
+    <div class="inner">
+      <div class="page-header">
+        <span class="mini-brand">MEDIY 金睿医联</span>
+        <span class="section-label">CLINICAL QC</span>
+      </div>
+
+      <div class="page-main">
+
+      <div class="section-title">
+        <div class="section-overline">临床质控</div>
+        <h2>AI 驱动 · 病历质控全流程</h2>
+        <p>覆盖门诊、住院与终末审核，实现书写即审、问题可视、闭环整改</p>
+        <div class="title-bar"></div>
+      </div>
+      <div class="flow-strip">
+        <div class="flow-step"><span>✍️</span>书写 / 录入</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><span>⚡</span>实时 AI 质控</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><span>🔍</span>终末审核</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><span>✅</span>闭环整改</div>
+      </div>
+      <div class="cap-grid-3">
+        <div class="cap-card">
+          <div class="cap-icon">📋</div>
+          <h3>终末质控</h3>
+          <p>病历原文与质控问题同屏对照，缺陷红框高亮，支持标注、申诉与审核流转。</p>
+          <span class="cap-tag">缺陷精准定位</span>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon">🤖</div>
+          <h3>AI 质控助手</h3>
+          <p>大模型自动审查书写规范与诊疗逻辑，实时评分、等级评定与整改建议。</p>
+          <span class="cap-tag">准确率 98%+</span>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon">🩺</div>
+          <h3>门诊实时质控</h3>
+          <p>边写边审，检测主诉规范、错别字与病史完整性，分级预警提示。</p>
+          <span class="cap-tag">书写即审</span>
+        </div>
+      </div>
+      <div class="cap-grid-3">
+        <div class="cap-card">
+          <div class="cap-icon">📊</div>
+          <h3>病历等级评定</h3>
+          <p>自动计算病历得分，支持甲乙丙级评定，质控评价报告一键生成。</p>
+          <span class="cap-tag">自动评分</span>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon">🔄</div>
+          <h3>申诉与闭环</h3>
+          <p>缺陷申诉、回复、回撤全流程管理，整改跟踪直至问题关闭。</p>
+          <span class="cap-tag">全流程闭环</span>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon">🛡️</div>
+          <h3>医保智能审核</h3>
+          <p>对接 HIS 与医保数据，识别违规收费，支持事前提醒与事后稽核。</p>
+          <span class="cap-tag">合规防控</span>
+        </div>
+      </div>
+      <div class="cap-grid-3" style="margin-bottom: 0;">
+        <div class="cap-card">
+          <div class="cap-icon">📝</div>
+          <h3>运行病历质控</h3>
+          <p>住院期间实时监测病程记录，及时预警遗漏与逻辑问题。</p>
+          <span class="cap-tag">事中监控</span>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon">📑</div>
+          <h3>质控评价报告</h3>
+          <p>自动生成科室 / 个人质控分析报告，支撑绩效考核。</p>
+          <span class="cap-tag">一键生成</span>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon">🎯</div>
+          <h3>27 项病案指标</h3>
+          <p>病案首页质量、诊断编码等核心指标自动监测与提醒。</p>
+          <span class="cap-tag">指标全覆盖</span>
+        </div>
+      </div>
+      <div class="highlight-row" style="margin-top: 4mm;">
+        <div class="highlight-box">
+          <h4>事前 · 事中 · 事后</h4>
+          <p>门诊书写即审、住院运行监控、终末全面审核，三阶段全覆盖。</p>
+        </div>
+        <div class="highlight-box">
+          <h4>AI + 规则双引擎</h4>
+          <p>大模型理解语义，规则引擎精准匹配，1000+ 条质控规则可配置。</p>
+        </div>
+        <div class="highlight-box">
+          <h4>质控闭环管理</h4>
+          <p>问题发现 → 通知整改 → 申诉复核 → 关闭归档，全程可追溯。</p>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>北京金睿医联科技有限公司 · MEDIY</span>
+        <span>临床质控</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 4: AI Agent (graphic) -->
+  <div class="page">
+    <div class="inner">
+      <div class="page-header">
+        <span class="mini-brand">MEDIY 金睿医联</span>
+        <span class="section-label">MEDIY AI AGENT</span>
+      </div>
+
+      <div class="page-main">
+
+      <div class="section-title">
+        <div class="section-overline">MEDIY 智能体</div>
+        <h2>多模型协同 · 医疗 AI 中枢</h2>
+        <p>统一接入语音、医疗、质控等专业大模型，私有化部署，数据不出院</p>
+        <div class="title-bar"></div>
+      </div>
+      <div class="agent-banner">
+        <h3>Agent Orchestration · 任务自动编排</h3>
+        <p>支持自然语言与语音多模态交互，理解临床语境，自动完成质控审查、病案检索、上报校验与编码辅助。</p>
+        <div class="agent-tags">
+          <span class="agent-tag">多模态交互</span>
+          <span class="agent-tag">工具链调用</span>
+          <span class="agent-tag">知识库增强</span>
+          <span class="agent-tag">私有化部署</span>
+        </div>
+      </div>
+      <div class="models-grid">
+        <div class="model-card"><div class="model-tag">Speech LLM</div><h4>语音大模型</h4><p>医患对话转写，门诊 / 查房 / 会诊场景。</p></div>
+        <div class="model-card"><div class="model-tag">Medical LLM</div><h4>医疗大模型</h4><p>诊断辅助、用药建议与循证问答。</p></div>
+        <div class="model-card"><div class="model-tag">QC LLM</div><h4>质控大模型</h4><p>书写规范与诊疗逻辑合规审查。</p></div>
+        <div class="model-card"><div class="model-tag">Record LLM</div><h4>病案大模型</h4><p>全文检索、OCR 提取与编码辅助。</p></div>
+        <div class="model-card"><div class="model-tag">Report LLM</div><h4>上报大模型</h4><p>病案首页与卫统报表智能填报。</p></div>
+        <div class="model-card"><div class="model-tag">Decision LLM</div><h4>决策大模型</h4><p>风险预警与质量趋势分析。</p></div>
+      </div>
+      <div class="highlight-row">
+        <div class="highlight-box">
+          <h4>🎙️ 语音驱动 · 一键成病历</h4>
+          <p>实时转写医患对话，按科室模板生成结构化病历，一键写入 EMR。</p>
+        </div>
+        <div class="highlight-box">
+          <h4>💬 循证 AI 问答</h4>
+          <p>解答扣分原因，基于指南输出结构化整改建议，助力快速闭环。</p>
+        </div>
+        <div class="highlight-box">
+          <h4>🏷️ 智能 ICD 编码</h4>
+          <p>自动推荐 ICD-10 编码，置信度评估，提取依据可溯源至原文。</p>
+        </div>
+      </div>
+      <div class="section-title" style="margin: 4mm 0 3mm;">
+        <div class="section-overline">ARCHITECTURE</div>
+        <h2 style="font-size: 14pt;">技术架构 · 可私有化部署</h2>
+        <div class="title-bar"></div>
+      </div>
+      <div class="arch-strip">
+        <div class="arch-item">
+          <h4>基础大模型</h4>
+          <p>通用语言理解能力</p>
+          <span class="arch-plus">+</span>
+        </div>
+        <div class="arch-item">
+          <h4>领域微调</h4>
+          <p>医疗语料专项训练</p>
+          <span class="arch-plus">+</span>
+        </div>
+        <div class="arch-item">
+          <h4>知识库 RAG</h4>
+          <p>指南规则增强检索</p>
+          <span class="arch-plus">+</span>
+        </div>
+        <div class="arch-item">
+          <h4>工具链调用</h4>
+          <p>对接 HIS / 质控引擎</p>
+        </div>
+      </div>
+      <div class="cap-grid-3" style="margin-top: 4mm; margin-bottom: 0;">
+        <div class="cap-card">
+          <div class="cap-icon">🔒</div>
+          <h3>数据不出院</h3>
+          <p>模型与知识库均可私有化部署，满足等保与数据安全要求。</p>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon">⚡</div>
+          <h3>毫秒级推理</h3>
+          <p>实时质控与预警，满足临床书写与审核时效需求。</p>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon">🔧</div>
+          <h3>灵活编排</h3>
+          <p>多模型按需组合，任务分解与结果汇总自动化。</p>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>北京金睿医联科技有限公司 · MEDIY</span>
+        <span>AI 智能体</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 5: Management & Indicators (graphic) -->
+  <div class="page">
+    <div class="inner">
+      <div class="page-header">
+        <span class="mini-brand">MEDIY 金睿医联</span>
+        <span class="section-label">ANALYTICS</span>
+      </div>
+
+      <div class="page-main">
+
+      <div class="section-title">
+        <div class="section-overline">管理驾驶舱</div>
+        <h2>数据驱动 · 全院质量可视可控</h2>
+        <p>从科室到指标、从规则到个案，管理决策有据可依</p>
+        <div class="title-bar"></div>
+      </div>
+      <div class="kpi-strip">
+        <div class="kpi-box c1"><div class="kpi-val">1000+</div><div class="kpi-lbl">质控规则</div></div>
+        <div class="kpi-box c2"><div class="kpi-val">98%+</div><div class="kpi-lbl">质控准确率</div></div>
+        <div class="kpi-box c3"><div class="kpi-val">35 项</div><div class="kpi-lbl">核心制度监测</div></div>
+        <div class="kpi-box c4"><div class="kpi-val">27 项</div><div class="kpi-lbl">病案指标体系</div></div>
+      </div>
+      <div class="chart-panel">
+        <h4>科室质控问题对比（示意）</h4>
+        <div class="bar-chart">
+          <div class="bar-group">
+            <div class="bar-pair"><div class="bar blue" style="height:18mm"></div><div class="bar pink" style="height:12mm"></div></div>
+            <div class="bar-label">儿科</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-pair"><div class="bar blue" style="height:22mm"></div><div class="bar pink" style="height:16mm"></div></div>
+            <div class="bar-label">重症</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-pair"><div class="bar blue" style="height:14mm"></div><div class="bar pink" style="height:10mm"></div></div>
+            <div class="bar-label">内科</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-pair"><div class="bar blue" style="height:20mm"></div><div class="bar pink" style="height:14mm"></div></div>
+            <div class="bar-label">外科</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-pair"><div class="bar blue" style="height:16mm"></div><div class="bar pink" style="height:11mm"></div></div>
+            <div class="bar-label">急诊</div>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <span><i class="bar blue"></i>问题总数</span>
+          <span><i class="bar pink"></i>未处理</span>
+        </div>
+      </div>
+      <div class="cap-grid-3">
+        <div class="cap-card">
+          <div class="cap-icon">📈</div>
+          <h3>质控总览</h3>
+          <p>汇总问题总量、修正率与严重问题分布，住院 / 门诊分维度统计，支持导出。</p>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon">⚙️</div>
+          <h3>规则引擎统计</h3>
+          <p>内涵、完整性、时效性多类规则，触发排行 TOP10 与修正率分析。</p>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon">📑</div>
+          <h3>病案 27 项指标体系</h3>
+          <p>指标下钻至患者个案，CT/MRI 符合率等三要素校验，符合原因可追溯。</p>
+        </div>
+      </div>
+      <div class="cap-grid-3" style="margin-top: 3mm; margin-bottom: 0;">
+        <div class="cap-card">
+          <div class="cap-icon">🏛️</div>
+          <h3>35 项核心制度</h3>
+          <p>国家卫健委核心制度全覆盖，同比 / 环比趋势对比与分级预警。</p>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon">🔎</div>
+          <h3>指标下钻追溯</h3>
+          <p>从指标比率直达患者清单，关联医嘱、报告与病程记录。</p>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon">📥</div>
+          <h3>报表导出</h3>
+          <p>支持 Excel 导出与多级下钻，满足审计留痕与汇报需求。</p>
+        </div>
+      </div>
+      <div class="highlight-row" style="margin-top: 4mm;">
+        <div class="highlight-box">
+          <h4>全院质量总览</h4>
+          <p>问题总量、未处理 / 已修正 / 严重问题一屏掌握，住院门诊分维。</p>
+        </div>
+        <div class="highlight-box">
+          <h4>规则触发分析</h4>
+          <p>内涵、完整性、时效性分类统计，TOP10 高频问题精准定位。</p>
+        </div>
+        <div class="highlight-box">
+          <h4>持续改进闭环</h4>
+          <p>趋势分析、根因挖掘与改进建议，支撑 PDCA 质量提升。</p>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>北京金睿医联科技有限公司 · MEDIY</span>
+        <span>管理驾驶舱</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 6: Solutions & Deployment -->
+  <div class="page">
+    <div class="inner">
+      <div class="page-header">
+        <span class="mini-brand">MEDIY 金睿医联</span>
+        <span class="section-label">SOLUTIONS</span>
+      </div>
+
+      <div class="page-main">
+
+      <div class="section-title">
+        <div class="section-overline">行业解决方案</div>
+        <h2>覆盖临床 · 管理 · 运营全场景</h2>
+        <p>基于大模型技术，为医院提供智能化、个性化的医疗质控与决策支持</p>
+        <div class="title-bar"></div>
+      </div>
+
+      <div class="solutions-grid" style="margin-bottom: 6mm;">
+        <div class="solution-card">
+          <h4>大模型驱动的病历质控</h4>
+          <ul>
+            <li>LLM 智能识别书写规范与逻辑错误</li>
+            <li>基于知识图谱的诊疗一致性检查</li>
+            <li>实时质控预警与闭环管理</li>
+          </ul>
+        </div>
+        <div class="solution-card">
+          <h4>AI 临床决策支持系统</h4>
+          <ul>
+            <li>个性化诊断建议与用药安全审查</li>
+            <li>循证医学知识库智能检索</li>
+            <li>高风险患者预警与干预建议</li>
+          </ul>
+        </div>
+        <div class="solution-card">
+          <h4>智能问答与知识服务</h4>
+          <ul>
+            <li>基于大模型的医疗知识问答</li>
+            <li>病历内容智能检索与摘要</li>
+            <li>诊疗指南与用药咨询服务</li>
+          </ul>
+        </div>
+        <div class="solution-card">
+          <h4>数据驱动的质量改进</h4>
+          <ul>
+            <li>AI 分析医疗质量趋势与异常</li>
+            <li>智能推荐质控规则与改进措施</li>
+            <li>多维度质量指标可视化分析</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-bottom: 4mm;">
+        <div class="section-overline">DEPLOYMENT</div>
+        <h2>灵活部署 · 全生命周期服务</h2>
+        <div class="title-bar"></div>
+      </div>
+
+      <div class="deploy-grid">
+        <div class="deploy-card">
+          <h4>私有化部署</h4>
+          <ul>
+            <li>医院内网可用</li>
+            <li>适配国产化</li>
+            <li>多活容灾</li>
+          </ul>
+        </div>
+        <div class="deploy-card">
+          <h4>混合云</h4>
+          <ul>
+            <li>数据可控</li>
+            <li>弹性扩展</li>
+            <li>成本优化</li>
+          </ul>
+        </div>
+        <div class="deploy-card">
+          <h4>SaaS</h4>
+          <ul>
+            <li>快速开通</li>
+            <li>按需计费</li>
+            <li>持续更新</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-row" style="margin-top: 5mm;">
+        <div class="highlight-box">
+          <h4>专业深耕</h4>
+          <p>长期专注病历质控、病案管理与卫统上报，产品贴合医院实际流程。</p>
+        </div>
+        <div class="highlight-box">
+          <h4>技术领先</h4>
+          <p>融合 LLM、向量检索与知识图谱，持续投入 AI 质控引擎研发。</p>
+        </div>
+        <div class="highlight-box">
+          <h4>可靠交付</h4>
+          <p>支持多种部署模式，提供从实施到运维的全生命周期服务。</p>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>北京金睿医联科技有限公司 · MEDIY</span>
+        <span>www.mediy.com.cn</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 7: Integration & Service -->
+  <div class="page">
+    <div class="inner">
+      <div class="page-header">
+        <span class="mini-brand">MEDIY 金睿医联</span>
+        <span class="section-label">INTEGRATION</span>
+      </div>
+
+      <div class="page-main">
+
+      <div class="section-title">
+        <div class="section-overline">系统对接</div>
+        <h2>无缝对接 · 医院信息系统</h2>
+        <p>标准接口快速联调，与医院现有信息化体系深度融合</p>
+        <div class="title-bar"></div>
+      </div>
+
+      <div class="integrate-grid" style="margin-top: 0;">
+        <div class="integrate-item">
+          <div class="int-icon">🏥</div>
+          <h4>HIS / EMR</h4>
+          <p>病历、医嘱、诊断数据实时同步</p>
+        </div>
+        <div class="integrate-item">
+          <div class="int-icon">🔬</div>
+          <h4>LIS / PACS</h4>
+          <p>检验检查报告自动关联校验</p>
+        </div>
+        <div class="integrate-item">
+          <div class="int-icon">💊</div>
+          <h4>医保平台</h4>
+          <p>结算数据对接，智能审核拦截</p>
+        </div>
+        <div class="integrate-item">
+          <div class="int-icon">📊</div>
+          <h4>卫统上报</h4>
+          <p>病案首页与报表智能填报</p>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin: 6mm 0 4mm;">
+        <div class="section-overline">SERVICE</div>
+        <h2>全生命周期服务流程</h2>
+        <div class="title-bar"></div>
+      </div>
+
+      <div class="service-flow">
+        <div class="service-step">
+          <div class="step-num">1</div>
+          <h4>需求调研</h4>
+          <p>深入了解医院场景与质控目标</p>
+        </div>
+        <div class="service-step">
+          <div class="step-num">2</div>
+          <h4>方案设计</h4>
+          <p>定制部署架构与规则配置方案</p>
+        </div>
+        <div class="service-step">
+          <div class="step-num">3</div>
+          <h4>实施上线</h4>
+          <p>系统部署、接口联调、数据迁移</p>
+        </div>
+        <div class="service-step">
+          <div class="step-num">4</div>
+          <h4>培训赋能</h4>
+          <p>临床、质控、管理多角色培训</p>
+        </div>
+        <div class="service-step">
+          <div class="step-num">5</div>
+          <h4>运维保障</h4>
+          <p>7×24 响应，持续规则与模型迭代</p>
+        </div>
+      </div>
+
+      <div class="audience-grid" style="margin-top: 6mm;">
+        <div class="audience-item">
+          <span>🏥</span>
+          <h4>三级医院</h4>
+          <p>全院质控与制度监测</p>
+        </div>
+        <div class="audience-item">
+          <span>🏨</span>
+          <h4>二级医院</h4>
+          <p>病历质控与智能上报</p>
+        </div>
+        <div class="audience-item">
+          <span>🩺</span>
+          <h4>专科医院</h4>
+          <p>专科规则与 AI 辅助</p>
+        </div>
+        <div class="audience-item">
+          <span>🔗</span>
+          <h4>区域医联体</h4>
+          <p>统一质控与数据标准</p>
+        </div>
+      </div>
+
+      <div class="promise-grid" style="margin-top: 5mm;">
+        <div class="promise-card">
+          <h4>实施保障</h4>
+          <ul>
+            <li>专属项目经理全程跟进</li>
+            <li>标准接口快速联调</li>
+            <li>分阶段上线降低风险</li>
+          </ul>
+        </div>
+        <div class="promise-card">
+          <h4>培训支持</h4>
+          <ul>
+            <li>临床 / 质控 / 管理分层培训</li>
+            <li>操作手册与视频教程</li>
+            <li>上线后驻场辅导</li>
+          </ul>
+        </div>
+        <div class="promise-card">
+          <h4>运维服务</h4>
+          <ul>
+            <li>7×24 技术响应</li>
+            <li>规则与模型持续迭代</li>
+            <li>定期巡检与优化建议</li>
+          </ul>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>北京金睿医联科技有限公司 · MEDIY</span>
+        <span>系统集成与服务</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 8: About & Contact -->
+  <div class="page">
+    <div class="inner">
+      <div class="page-header">
+        <span class="mini-brand">MEDIY 金睿医联</span>
+        <span class="section-label">ABOUT & CONTACT</span>
+      </div>
+
+      <div class="page-main">
+
+      <div class="section-title">
+        <div class="section-overline">关于公司</div>
+        <h2>专业深耕 · 技术领先 · 可靠交付</h2>
+        <div class="title-bar"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <h3>北京金睿医联科技有限公司</h3>
+          <p>
+            MEDIY 是一家聚焦智慧医疗领域的科技公司，致力于将大语言模型、知识图谱与医疗信息化深度融合，
+            为医院及区域医疗提供质控、病案、上报与制度监测等一体化解决方案。
+          </p>
+          <p>
+            团队具备丰富的医疗信息化与 AI 工程经验，产品已服务全国 200 余家医疗机构，
+            持续迭代质控规则与模型能力，助力客户实现数字化转型与数据资产沉淀。
+          </p>
+        </div>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="label">企业愿景</div>
+            <div class="value">成为医疗智能化领域的领先服务商</div>
+          </div>
+          <div class="value-card">
+            <div class="label">企业使命</div>
+            <div class="value">智启医疗，慧联健康</div>
+          </div>
+          <div class="value-card">
+            <div class="label">服务客户</div>
+            <div class="value">200+ 医疗机构</div>
+          </div>
+          <div class="value-card">
+            <div class="label">核心能力</div>
+            <div class="value">大模型质控 · 数据中台 · 医保智能审核</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-box" style="margin-top: 5mm;">
+        <div class="contact-info">
+          <h3>预约演示 · 获取方案</h3>
+          <div class="slogan">智启医疗，慧联健康 · Smart Healthy · Connected Care</div>
+          <div class="contact-phone-label">全国统一服务热线</div>
+          <div class="contact-phone">400-168-6908</div>
+          <div class="contact-website">官网：www.mediy.com.cn</div>
+        </div>
+        <div class="contact-qr">
+          <img src="assets/contact-qrcode.png" alt="联系二维码" />
+          <span>扫码访问官网 / 联系我们</span>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>© 2026 北京金睿医联科技有限公司 · 京ICP备2025149901号-1</span>
+        <span>MEDIY 产品宣传彩页</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
